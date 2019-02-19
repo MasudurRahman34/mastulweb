@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/webmastul/admin', 'backend\adminpage@index')->name('admin');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
