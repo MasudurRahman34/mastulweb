@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/webmastul/admin', 'backend\adminpage@index')->name('admin');
+Route::get('/webmastul/admin', 'backend\adminpage@index')->name('/webmastul/admin');
 
 Auth::routes();
 

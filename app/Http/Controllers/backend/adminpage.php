@@ -14,7 +14,7 @@ class adminpage extends Controller
      */
     public function index()
     {
-      return view('backend.layouts.master');  
+      return view('backend.pages.index');
     }
 
     /**

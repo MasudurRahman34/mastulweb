@@ -9,6 +9,6 @@
   <link rel="stylesheet" href="{{asset('admin/node_modules/jvectormap/jquery-jvectormap.css')}} " />
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{asset('admin/css/style.css')}} ">
+  <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
   <!-- endinject -->
   
