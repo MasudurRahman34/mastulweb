@@ -1,5 +1,5 @@
 <!-- plugins:css -->
-  <link rel="stylesheet" href=" {{asset('node_modules/mdi/css/materialdesignicons.min.css')}} ">
+  <link rel="stylesheet" href=" {{asset('admin/node_modules/mdi/css/materialdesignicons.min.css')}} ">
   <link rel="stylesheet" href="{{asset('admin/node_modules/simple-line-icons/css/simple-line-icons.css')}}">
   <link rel="stylesheet" href="{{asset('admin/node_modules/flag-icon-css/css/flag-icon.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/node_modules/perfect-scrollbar/css/perfect-scrollbar.css')}} ">

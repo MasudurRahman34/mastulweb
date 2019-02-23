@@ -25,4 +25,9 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{{asset('admin/js/dashboard.js')}} "></script>
+
+  
+  <script src="{{asset('admin/node_modules/jquery-steps/build/jquery.steps.min.js')}} "></script>
+  <script src="{{asset('admin/node_modules/jquery-validation/dist/jquery.validate.min.js')}} "></script>
+  <script src="{{asset('admin/js/wizard.js')}} "></script>
   <!-- End custom js for this page-->
