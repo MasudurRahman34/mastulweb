@@ -7,12 +7,24 @@
             <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">jquery-steps wizard</h4>
+                  <h4 class="card-title">Personal Details Of Child</h4>
                   <form id="example-form" action="#">
                     <div>
-                      <h3>Account</h3>
+                      <h3>About Child</h3>
                       <section>
                         <div class="form-group">
+                          <label for="exampleInputEmail1">Full name</label>
+                          <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                          <label>Last name</label>
+                          <input type="password" class="form-control" placeholder="Last name">
+                        </div>
+                        <div class="form-group">
+                          <label>Profession</label>
+                          <input type="password" class="form-control" placeholder="Profession">
+                        </div>
+                        <!-- <div class="form-group">
                           <label for="exampleInputEmail1">Email address</label>
                           <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
                           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -24,8 +36,9 @@
                         <div class="form-group">
                           <label for="exampleInputPassword1">Confirm Password</label>
                           <input type="password" class="form-control" placeholder="Confirm password">
-                        </div>
-                      </section>
+                        </div>-->
+                      </section> 
+
                       <h3>Profile</h3>
                       <section>
                         <div class="form-group">
