@@ -27,7 +27,7 @@ $(document).ready(function(){
     $('[rel="tooltip"]').tooltip();
 
     // Code for the Validator
-    var $validator = $('.wizard-card form').validate({
+    var $validator /*= $('.wizard-card form').validate({
 		  rules: {
 		    firstname: {
 		      required: true,
@@ -46,7 +46,7 @@ $(document).ready(function(){
         errorPlacement: function(error, element) {
             $(element).parent('div').addClass('has-error');
          }
-	});
+	});*/
 
     // Wizard Initialization
   	$('.wizard-card').bootstrapWizard({
@@ -127,10 +127,57 @@ $(document).ready(function(){
   	});
 
 
-    // Prepare the preview for profile picture
+    // Prepare the 1st preview for profile picture
     $("#wizard-picture").change(function(){
         readURL(this);
+    // Prepare the 2nd preview for profile picture
     });
+     $("#wizard-picture1").change(function(){
+        readURL1(this);
+    // Prepare the 3rd preview for profile picture
+    });
+      $("#wizard-picture2").change(function(){
+        readURL3(this);
+    });
+
+//Function to show image before upload
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+//Function to show image before upload 2
+function readURL1(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#wizardPicturePreview1').attr('src', e.target.result).fadeIn('slow');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+//Function to show image before upload 3
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#wizardPicturePreview1').attr('src', e.target.result).fadeIn('slow');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
 
     $('[data-toggle="wizard-radio"]').click(function(){
         wizard = $(this).closest('.wizard-card');
@@ -156,18 +203,8 @@ $(document).ready(function(){
 
 
 
- //Function to show image before upload
+ 
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
 
 $(window).resize(function(){
     $('.wizard-card').each(function(){
@@ -255,3 +292,5 @@ function debounce(func, wait, immediate) {
 		if (immediate && !timeout) func.apply(context, args);
 	};
 };
+
+ 

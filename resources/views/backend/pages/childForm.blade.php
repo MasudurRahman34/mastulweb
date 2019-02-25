@@ -1,59 +1,131 @@
-  @extends('backend.layouts.master')
+ @extends('backend.layouts.master')
 
   @section('content')
   <link rel="shortcut icon" hreadmin/images/favicon.html" /></head>
-
   <!-- partial -->
   <!--  <input class="mdl-textfield__input" type="text" id="sample3">
    <label class="mdl-textfield__label" for="sample3">Text...</label> -->
-
    <div class="col-sm-8 col-sm-offset-2">
     <!--      Wizard container        -->
     <div class="wizard-container">
       <div class="card wizard-card" data-color="green" id="wizardProfile">
-        <form action="" method="">
+        <form action="" method="" enctype="multipart/form-data">
           <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
           <div class="wizard-header">
             <h3 class="wizard-title">
-             Build Your Profile
+             Build Your Child Profile
            </h3>
            <h5>This information will let us know more about you.</h5>
          </div>
          <div class="wizard-navigation">
           <ul>
-            <li><a href="#more" data-toggle="tab">More</a></li>
-            <li><a href="#about" data-toggle="tab">About</a></li>
-            <li><a href="#account" data-toggle="tab">Account</a></li>
-            <li><a href="#address" data-toggle="tab">Address</a></li>
-            <li><a href="#fuck" data-toggle="tab">fuck</a></li>
+            <li><a href="#aboutChild" data-toggle="tab">Child Info</a></li>
+            <li><a href="#aboutParent" data-toggle="tab">Parent Info</a></li>
+            <li><a href="#dreamLike" data-toggle="tab">Dream-Likes</a></li>
+            <li><a href="#contact" data-toggle="tab">Contact</a></li>
+            <li><a href="#verify" data-toggle="tab">Verify</a></li>
+            <li><a href="#image" data-toggle="tab">Image</a></li>
           </ul>
         </div>
 
+        <!-- About Child -->
         <div class="tab-content">
-          <div class="tab-pane" id="address">
+          <div class="tab-pane" id="aboutChild">
             <div class="row">
               <div class="col-sm-12">
-                <h4 class="info-text"> Are you living in a nice area? </h4>
+                <h4 class="info-text" style="color: blue"> Personal Details Of Child </h4>
               </div>
-              <div class="col-sm-7 col-sm-offset-1">
+              <div class="col-sm-5 col-sm-offset-1">
                 <div class="form-group label-floating">
-                  <label class="control-label">Street Name <small>(required)</small></label>
-                  <input type="text" class="form-control" required>
+                  <label class="control-label">Full Name <small>(required)</small></label>
+                  <input type="text" class="form-control" >
+                </div>
+              </div>
+              <div class="col-sm-3">
+                  <div class="form-group">
+                  <label class=""> Select Gender</label>
                 </div>
               </div>
               <div class="col-sm-3">
                 <div class="form-group label-floating">
-                  <label class="control-label">Street Number</label>
-                  <input type="text" class="form-control">
+                  <input type="checkbox" class="" id="wizard-checkbox" value="male">Male
+                  <input type="checkbox" class="" id="wizard-checkbox" value="Female">Female
                 </div>
               </div>
-              <div class="col-sm-5 col-sm-offset-1">
+              <div class="col-sm-4 ">
                 <div class="form-group label-floating">
-                  <label class="control-label">City</label>
+                  <label class="control-label">Age</label>
                   <input type="text" class="form-control">
                 </div>
               </div>
-              <div class="col-sm-5">
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Class</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">School</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Height</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                <label class="control-label">Religious</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Islam"> Islam </option>
+                    <option value="Hindu"> Hindu </option>
+                    <option value="Christian"> Christian </option>
+                    <option value="Christian"> Christian </option>
+                  </select>
+                </div>
+
+              </div>
+              
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Blood Group</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="A+"> A+ </option>
+                    <option value="O+"> O+ </option>
+                    <option value="B+"> B+ </option>
+                    <option value="AB+"> AB+ </option>
+                    <option value="A-"> A- </option>
+                    <option value="O-"> O- </option>
+                    <option value="B-"> B- </option>
+                    <option value="AB-"> AB- </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-sm-5 ">
+                <div class="form-group label-floating">
+                  <input type="date" class="form-control">Date Of Birth
+                  <label class="control-label"></label>
+                </div>
+              </div>
+              
+              <div class="col-sm-7 ">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: pink">Does Child Have Any Birth Cirtificate?</label>
+                  <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Afghanistan"> No </option>
+                    <option value="Afghanistan"> Yes </option>
+                  </select>
+                </div>
+              </div>
+              <!-- <div class="col-sm-5">
                 <div class="form-group label-floating">
                   <label class="control-label">Country</label>
                   <select name="country" class="form-control">
@@ -69,166 +141,493 @@
                     <option value="...">...</option>
                   </select>
                 </div>
+              </div> -->
+              <div class="col-sm-12 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Present Address</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                  <label class="control-label">Permanent Address</label>
+                </div>
+              </div>
+
+              <div class="col-sm-3 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Village</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+              <div class="col-sm-3 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Home District</label>
+                  <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Dhaka"> Dhaka </option>
+                    <option value="Barishal"> Barishal </option>
+                  </select>
+                </div>
+              </div>
+               <div class="col-sm-3 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Upazilla</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="A+"> A+ </option>
+                    <option value="O+"> O+ </option>
+                    <option value="B+"> B+ </option>
+                    <option value="AB+"> AB+ </option>
+                    <option value="A-"> A- </option>
+                    <option value="O-"> O- </option>
+                    <option value="B-"> B- </option>
+                    <option value="AB-"> AB- </option>
+                  </select>
+                </div>
+              </div> <div class="col-sm-3 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Union</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="A+"> A+ </option>
+                    <option value="O+"> O+ </option>
+                    <option value="B+"> B+ </option>
+                    <option value="AB+"> AB+ </option>
+                    <option value="A-"> A- </option>
+                    <option value="O-"> O- </option>
+                    <option value="B-"> B- </option>
+                    <option value="AB-"> AB- </option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
-          <div class="tab-pane" id="about">
+
+          <!-- parent information -->
+          <div class="tab-pane" id="aboutParent">
             <div class="row">
+              <div class="col-sm-12">
+                <h4 class="info-text"  style="color: blue"> Father Information</h4>
+              </div>
+              <div class="col-sm-6 col-sm-offset-1">
+                <div class="form-group label-floating">
+                  <label class="control-label">Fathers Name <small>(required)</small></label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Occupation</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Mobile</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Income</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
               
-              <div class="col-sm-4 col-sm-offset-1">
+             <div class="col-sm-12">
+                <h4 class="info-text"  style="color: blue"> Mother Information</h4>
+               
+              </div>
+
+              <div class="col-sm-6 col-sm-offset-1 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Mothers Name <small>(required)</small></label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating">
+                   <label class="control-label">Occupation</label>
+                  <input type="text" class="form-control">
+                  <input type="radio" class="">Housewife
+                </div>
+              </div>
+              <div class="col-sm-6   col-sm-offset-1">
+                <div class="form-group label-floating ">
+                  <label class="control-label">Mobile</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Income</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <h4 class="info-text" style="color: blue"> Details Child's Brother and Sister</h4>
+                
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label"><span style="color: pink">01.</span> Name</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Age</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Class</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label"><span style="color: pink">02.</span> Name</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Age</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Class</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label"><span style="color: pink">03.</span> Name</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Age</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Class</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- dream and Like -->
+          <div class="tab-pane" id="dreamLike">
+            <div class="row">
+              <div class="col-sm-12">
+                <h4 class="info-text"  style="color: blue">Dream</h4>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                  <label class="control-label">Child Say <small>(required)</small></label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+             <div class="col-sm-12">
+                <h4 class="info-text"  style="color: blue"> Likes And favorites</h4>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating">
+                  <label class="control-label">Color</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Red"> Red </option>
+                    <option value="Yellow"> Yellow </option>
+                    <option value="Blue"> Blue </option>
+                    <option value="Pink"> Pink </option>
+                    <option value="Green">Green </option>
+                    <option value="White"> White</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating">
+                   <label class="control-label">Foods</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating ">
+                  <label class="control-label">Favorite Place</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating">
+                  <label class="control-label">Sports</label>
+                  <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Cricket"> Cricket </option>
+                    <option value="Football"> Football </option>
+                    <option value="Badminton"> Badminton </option>
+                    <option value="Kanamachi"> Kanamachi </option>
+                    <option value="Borofpani">Borofpani </option>
+                    <option value="Kutkut"> Kutkut</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating ">
+                  <label class="control-label">Favorite Personality</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating ">
+                  <label class="control-label">Favorite Teacher</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating ">
+                  <label class="control-label">Hobby</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Singing"> Singing </option>
+                    <option value="Art"> Art </option>
+                    <option value="Dancing"> Dancing </option>
+                    <option value="Gossiping"> Gossiping </option>
+                    <option value="Playing">Playing</option>
+                    <option value="Travelling"> Travelling</option>
+                    <option value="Reading"> Reading</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating ">
+                  <label class="control-label">Child's Skills</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Singing"> Singing </option>
+                    <option value="Art"> Art </option>
+                    <option value="Dancing"> Dancing </option>
+                    <option value="Reciting"> Reciting </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- contact information -->
+          <div class="tab-pane" id="contact">
+            <div class="row">
+              <div class="col-sm-12">
+                <h4 class="info-text"  style="color: blue">House Owner Information</h4>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating">
+                  <label class="control-label">House Owner's Name <small>(required)</small></label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Address</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Mobile</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              
+             <div class="col-sm-12">
+                <h4 class="info-text"  style="color: blue">Sibling's Information</h4>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Name <small></small></label>
+                  <input type="text" name="sibling" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating ">
+                  <label class="control-label">Address</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating ">
+                  <label class="control-label">Mobile</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <h4 class="info-text" style="color: blue"> Relative's Information</h4>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label"> Name</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Address</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Mobile</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <h4 class="info-text" style="color: blue">Neighbour's Information</h4>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label"> Name</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Address</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Mobile</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="verify">
+            <div class="row">
+              <div class="col-sm-12">
+                <h4 class="info-text" style="color: blue"> Teacher Or Parent's Comment</h4>
+              </div>
+              <div class="col-sm-4">
+                  <div class="form-group">
+                  <label class=""> Brilliancy</label>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="form-group label-floating">
+                  <input type="checkbox" class="" id="wizard-checkbox" value="male">Satisfactory
+                  <input type="checkbox" class="" id="wizard-checkbox" value="Female">Very Good
+                  <input type="checkbox" class="" id="wizard-checkbox" value="Female">Good
+                </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="form-group">
+                  <label class=""> Behaviour</label>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="form-group label-floating">
+                  <input type="checkbox" class="" id="wizard-checkbox" value="male">Satisfactory
+                  <input type="checkbox" class="" id="wizard-checkbox" value="Female">Very Good
+                  <input type="checkbox" class="" id="wizard-checkbox" value="Female">Good
+                </div>
+              </div>
+              <div class="col-sm-4">
+                  <div class="form-group">
+                  <label class=""> Attendence</label>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="form-group label-floating">
+                  <input type="checkbox" class="" id="wizard-checkbox" value="male">Satisfactory
+                  <input type="checkbox" class="" id="wizard-checkbox" value="Female">Very Good
+                  <input type="checkbox" class="" id="wizard-checkbox" value="Female">Good
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                  <label class="control-label">Comment</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                <label class="control-label">Verify By The Officer</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Islam"> Reaz </option>
+                    <option value="Hindu"> Jahid </option>
+                    <option value="Christian"> Antora </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                  <div class="form-group">
+                  <label class=""> Verify Date</label>
+                </div>
+              </div>
+               <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <input type="date" class="form-control">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <!-- about Image-->
+          <div class="tab-pane" id="image">
+            <div class="row"> 
+              <div class="col-sm-4">
                 <div class="picture-container">
                   <div class="picture">
                     <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                    <input type="file" id="wizard-picture">
+                    <input type="file" id="wizard-picture" name="image[]" multiple>
                   </div>
                   <h6>Choose Picture</h6>
                 </div>
               </div>
-              <div class="col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="material-icons">face</i>
-                  </span>
-                  <div class="form-group label-floating">
-                    <label class="control-label">First Name <small>(required)</small></label>
-                    <input name="firstname" type="text" class="form-control">
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
+                    <input type="file" id="wizard-picture1" name="image[]" multiple>
                   </div>
+                  <h6>Choose Picture</h6>
                 </div>
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="material-icons">face</i>
-                  </span>
-                  <div class="form-group label-floating">
-                    <label class="control-label">second Name <small>(required)</small></label>
-                    <input name="secondname" type="text" class="form-control" required>
+              </div> 
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview2" />
+                    <input type="file" id="wizard-picture2" name="image[]" multiple>
                   </div>
+                  <h6>Choose Picture</h6>
                 </div>
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="material-icons">face</i>
-                  </span>
-                  <div class="form-group label-floating">
-                    <label class="control-label">fourth name Name <small>(required)</small></label>
-                    <input name="fourthtname" type="text" class="form-control">
-                  </div>
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="material-icons">face</i>
-                  </span>
-                  <div class="form-group label-floating">
-                    <label class="control-label">Third name Name <small>(required)</small></label>
-                    <input name="thirdname" type="text" class="form-control">
-                  </div>
-                </div>
-
-
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="material-icons">record_voice_over</i>
-                  </span>
-                  <div class="form-group label-floating">
-                    <label class="control-label">Last Name <small>(required)</small></label>
-                    <input name="lastname" type="text" class="form-control">
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="material-icons">email</i>
-                  </span>
-                  <div class="form-group label-floating">
-                    <label class="control-label">Email <small>(required)</small></label>
-                    <input name="email" type="email" class="form-control">
-                  </div>
-                </div>
-              </div>
+              </div> 
             </div>
           </div>
-          <div class="tab-pane" id="account">
-            <h4 class="info-text"> What are you doing? (checkboxes) </h4>
-            <div class="row">
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="col-sm-4">
-                  <div class="choice" data-toggle="wizard-checkbox">
-                    <input type="checkbox" name="jobb" value="Design">
-                    <div class="icon">
-                      <i class="fa fa-pencil"></i>
-                    </div>
-                    <h6>Design</h6>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="choice" data-toggle="wizard-checkbox">
-                    <input type="checkbox" name="jobb" value="Code">
-                    <div class="icon">
-                      <i class="fa fa-terminal"></i>
-                    </div>
-                    <h6>Code</h6>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="choice" data-toggle="wizard-checkbox">
-                    <input type="checkbox" name="jobb" value="Develop">
-                    <div class="icon">
-                      <i class="fa fa-laptop"></i>
-                    </div>
-                    <h6>Develop</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="address">
-            <div class="row">
-              <div class="col-sm-12">
-                <h4 class="info-text"> Are you living in a nice area? </h4>
-              </div>
-              <div class="col-sm-7 col-sm-offset-1">
-                <div class="form-group label-floating">
-                  <label class="control-label">Street Name <small>(required)</small></label>
-                  <input type="text" class="form-control" required>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="form-group label-floating">
-                  <label class="control-label">Street Number</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div>
-              <div class="col-sm-5 col-sm-offset-1">
-                <div class="form-group label-floating">
-                  <label class="control-label">City</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div>
-              <div class="col-sm-5">
-                <div class="form-group label-floating">
-                  <label class="control-label">Country</label>
-                  <select name="country" class="form-control">
-                    <option disabled="" selected=""></option>
-                    <option value="Afghanistan"> Afghanistan </option>
-                    <option value="Albania"> Albania </option>
-                    <option value="Algeria"> Algeria </option>
-                    <option value="American Samoa"> American Samoa </option>
-                    <option value="Andorra"> Andorra </option>
-                    <option value="Angola"> Angola </option>
-                    <option value="Anguilla"> Anguilla </option>
-                    <option value="Antarctica"> Antarctica </option>
-                    <option value="...">...</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="wizard-footer">
           <div class="pull-right">
             <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
             <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='Finish' />
           </div>
-
           <div class="pull-left">
             <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
           </div>
@@ -248,23 +647,14 @@
 <!--vertical wizard-->
 </div>
 @endsection
-
-
 <!-- content-wrapper ends -->
 <!-- partial:../../partials/_footer.html -->
 <!-- container-scroller -->
 <!-- plugins:js -->
-
 <!-- Plugin js for this page-->
-
-
 <!-- End plugin js for this page-->
 <!-- inject:js -->
 <!-- endinject -->
 <!-- Custom js for this page-->
-
 <!-- End custom js for this page-->
-
-
 <!-- Mirrored from www.bootstrapdash.com/demo/stellar-admin/jquery/pages/forms/wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Feb 2019 11:04:38 GMT -->
-
