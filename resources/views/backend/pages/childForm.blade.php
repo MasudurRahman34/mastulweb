@@ -5,7 +5,7 @@
   <!-- partial -->
   <!--  <input class="mdl-textfield__input" type="text" id="sample3">
    <label class="mdl-textfield__label" for="sample3">Text...</label> -->
-   <div class="col-sm-8 col-sm-offset-2">
+   <div class="col-sm-9 col-sm-offset-1">
     <!--      Wizard container        -->
     <div class="wizard-container">
       <div class="card wizard-card" data-color="green" id="wizardProfile">
@@ -22,14 +22,16 @@
             <li><a href="#aboutChild" data-toggle="tab">Child Info</a></li>
             <li><a href="#aboutParent" data-toggle="tab">Parent Info</a></li>
             <li><a href="#dreamLike" data-toggle="tab">Dream-Likes</a></li>
+            <li><a href="#gardianSurvey" data-toggle="tab">Survey</a></li>
             <li><a href="#contact" data-toggle="tab">Contact</a></li>
             <li><a href="#verify" data-toggle="tab">Verify</a></li>
             <li><a href="#image" data-toggle="tab">Image</a></li>
           </ul>
         </div>
 
-        <!-- About Child -->
+        
         <div class="tab-content">
+          <!-- About Child -->
           <div class="tab-pane" id="aboutChild">
             <div class="row">
               <div class="col-sm-12">
@@ -425,6 +427,187 @@
               </div>
             </div>
           </div>
+
+          <!-- Gardian's survey -->
+          <div class="tab-pane" id="gardianSurvey">
+            <div class="row">
+              <div class="col-sm-12">
+                <h4 class="info-text" style="color: blue">Child's Parents Or Guardians Information And Survey Questionnares  CSDP</h4>
+              </div>
+              <div class="col-sm-6 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Informar Name <small>(required)</small></label>
+                  <input type="text" class="form-control" >
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Age</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Education Level Of <span style="color: Maroon">Father</span></label>
+                  <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="None"> None </option>
+                    <option value="Below-Five">Below-Five</option>
+                    <option value="Below-SSC"> Below-SSC </option>
+                    <option value="Five">SSC </option>
+                    <option value="Five">Five </option>
+                    <option value="HSC"> HSC</option>
+                    <option value="Honours">Honours</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Education Level Of <span style="color: Maroon">Mother</span></label>
+                  <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="None"> None </option>
+                    <option value="Below-Five">Below-Five</option>
+                    <option value="Below-SSC"> Below-SSC </option>
+                    <option value="Five">SSC </option>
+                    <option value="Five">Five </option>
+                    <option value="HSC"> HSC</option>
+                    <option value="Honours">Honours</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-12 ">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #663300">Reasons Behind Stoping Education ?</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                <label class="control-label" style="color: #004d00">Period Of Remaining At Present Residence</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Below-Two-Years"> Below-Two-Years </option>
+                    <option value="Below-Five-Years">Below-Five-Years</option>
+                    <option value="Below-Ten-Years"> Below-Ten-Years </option>
+                    <option value="Above-Five-Years">Above-Five-Years </option>
+                    <option value="Above-Ten-Years">Above-Ten-Years </option>
+                    <option value="Above-Two-Years"> Above-Two-Years</option>
+                    <option value="Recent">Recent</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="col-sm-3">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #004d00">Where Was Before ?</label>
+                   <input type="text" class="form-control" >
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #004d00">Reason Behind Changing Residence ?</label>
+                   <input type="text" class="form-control" >
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #004d00">Plan of Changing Present Residence ?</label>
+                   <input type="text" class="form-control" disabled >
+                </div>
+              </div>
+              <div class="col-sm-3 ">
+                <div class="form-group label-floating">
+                  <input type="checkbox" name="No" ><span style="color: #004d00">No</span>
+                  <input type="checkbox" name="Not Sure" ><span style="color: #004d00">Not Sure</span>
+                  <input type="checkbox" name="Yes" ><span style="color: #004d00">Yes</span>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #004d00">If Yes, Why and Where The Place?</label>
+                   <input type="text" class="form-control" >
+                </div>
+              </div>
+
+
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                <label class="control-label" style="color: #9900cc">Type of House</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Building">Bulding</option>
+                    <option value="Brick-House">Brick_House</option>
+                    <option value="Tin-Shed"> Tin-Shed </option>
+                    <option value="Hut">Hut</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-4 ">
+                <div class="form-group label-floating">
+                <label class="control-label" style="color: #9900cc">Period Of Study At This School </label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="Below-One-Year">Below-One-Years</option>
+                    <option value="One-Year">One-Year</option>
+                    <option value="One-Year"> One-Year </option>
+                    <option value="Two-Years"> Two-Years </option>
+                    <option value="Three-Years"> Three-Years </option>
+                    <option value="Four-Years">Four-Years</option>
+                    <option value="Five-Years">Five-Years</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #9900cc">Previous School Name ?</label>
+                   <input type="text" class="form-control" >
+                </div>
+              </div>
+               <div class="col-sm-12">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #663300">Reasons Behind Changing School ? </label>
+                   <input type="text" class="form-control" >
+                </div>
+              </div>
+
+              <div class="col-sm-5 ">
+                <div class="form-group label-floating">
+                  <label class="control-label">Satisfactory Level Of This Education System</label>
+                  <input type="text" class="form-control" disabled>
+                </div>
+              </div>
+              <div class="col-sm-3 ">
+                <div class="form-group label-floating">
+                  <input type="checkbox" name="Satisfactory" class>Happy
+                  <input type="checkbox" name="dissatisfactory" class>Dismal
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group label-floating">
+                  <label class="control-label">Noticable Reason</label>
+                  <input type="text" class="form-control" >
+                </div>
+              </div>
+              <div class="col-sm-12 ">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #663300">Parents Problem During Study Of Children</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              
+              <div class="col-sm-12 ">
+                <div class="form-group label-floating">
+                  <label class="control-label" style="color: #00cc00">Parents Dream And Plan For Her Child ?</label>
+                   <input type="text" class="form-control">
+                </div>
+              </div>
+          </div>
+        </div>
+
+
           <!-- contact information -->
           <div class="tab-pane" id="contact">
             <div class="row">
@@ -518,6 +701,10 @@
               </div>
             </div>
           </div>
+
+
+
+          <!-- veryfication -->
           <div class="tab-pane" id="verify">
             <div class="row">
               <div class="col-sm-12">
@@ -619,6 +806,12 @@
                     <input type="file" id="wizard-picture2" name="image[]" multiple>
                   </div>
                   <h6>Choose Picture</h6>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                  <label class="control-label">Video Link</label>
+                  <input type="text" class="form-control">
                 </div>
               </div> 
             </div>

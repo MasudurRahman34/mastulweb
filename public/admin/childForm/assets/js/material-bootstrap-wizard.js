@@ -137,7 +137,7 @@ $(document).ready(function(){
     // Prepare the 3rd preview for profile picture
     });
       $("#wizard-picture2").change(function(){
-        readURL3(this);
+        readURL2(this);
     });
 
 //Function to show image before upload
@@ -171,7 +171,7 @@ function readURL2(input) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#wizardPicturePreview1').attr('src', e.target.result).fadeIn('slow');
+            $('#wizardPicturePreview2').attr('src', e.target.result).fadeIn('slow');
         }
         reader.readAsDataURL(input.files[0]);
     }
