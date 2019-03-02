@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/webmastul/admin', 'backend\adminpage@index')->name('webmastul/admin');
 Route::get('/webmastul/childForm', 'backend\adminpage@childForm')->name('webmastul/childForm');
+Route::get('/webmastul/childList', 'backend\adminpage@childList')->name('webmastul/childList');
 
 Auth::routes();
 
