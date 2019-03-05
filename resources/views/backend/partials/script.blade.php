@@ -28,21 +28,20 @@
 
   
   <script src="{{asset('admin/node_modules/jquery-steps/build/jquery.steps.min.js')}} "></script>
-  <script src="{{asset('admin/node_modules/jquery-validation/dist/jquery.validate.min.js')}} "></script>
 
+  <!-- <script src="assets/js/jquery.validate.min.js"></script>
+   --><script src="{{asset('admin/node_modules/jquery-validation/dist/jquery.validate.min.js')}} "></script>
+<!-- End plugin  -->
 
   <script src="{{asset('admin/childForm/assets/js/jquery.bootstrap.js')}} "></script>
   <script src="{{asset('admin/js/wizard.js')}} "></script>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <!-- End custom js for this page-->
 
-
-  <!-- <script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-  <script src="assets/js/bootstrap.min.js" type="text/javascript"></script> -->
-
   <!--  Plugin for the Wizard -->
   <script src="{{asset('admin/childForm/assets/js/material-bootstrap-wizard.js')}}"></script>
-
-    <!--  More information about jquery.validate here: http://jqueryvalidation.org/  -->
-  <!-- <script src="assets/js/jquery.validate.min.js"></script>
-   -->
+<!-- Plugin js for profile page-->
+  <script src="{{asset('admin/node_modules/dropify/dist/js/dropify.min.js')}}"></script>
+      <!-- custom -->
+  <script src="{{asset('admin/js/dropify.js')}}"></script>
+  <!-- End plugin profile page-->

@@ -8,9 +8,7 @@
   <link rel="stylesheet" href="{{asset('admin/node_modules/chartist/dist/chartist.min.css')}} " />
   <link rel="stylesheet" href="{{asset('admin/node_modules/jvectormap/jquery-jvectormap.css')}} " />
   <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
-  <!-- endinject -->
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 
@@ -29,3 +27,8 @@
 
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('admin/childForm/assets/css/demo.css" rel="stylesheet')}}" />
+
+   <!--Child Profile Page -->
+  <link rel="stylesheet" href="{{asset('admin/node_modules/dropify/dist/css/dropify.min.css')}}">
+  <!-- End plugin css for this page -->
+  <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">

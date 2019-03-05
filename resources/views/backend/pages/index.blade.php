@@ -2,8 +2,8 @@
 @extends('backend.layouts.master')
 
 @section('content')
-
-<div class="col-lg-12 grid-margin">
+  <div class="row">
+      <div class="col-lg-12 grid-margin">
               <div class="card overflow-hidden dashboard-curved-chart">
                 <div class="card-body mx-3">
                   <h2 class="card-title border-bottom-none">Recent Movement</h2>
