@@ -19,18 +19,64 @@
          </div>
          <div class="wizard-navigation">
           <ul>
+            <li><a href="#image" data-toggle="tab">Image</a></li>
             <li><a href="#aboutChild" data-toggle="tab">Child Info</a></li>
             <li><a href="#aboutParent" data-toggle="tab">Parent Info</a></li>
             <li><a href="#dreamLike" data-toggle="tab">Dream-Likes</a></li>
             <li><a href="#gardianSurvey" data-toggle="tab">Survey</a></li>
             <li><a href="#contact" data-toggle="tab">Contact</a></li>
             <li><a href="#verify" data-toggle="tab">Verify</a></li>
-            <li><a href="#image" data-toggle="tab">Image</a></li>
           </ul>
-        </div>
-
-        
+        </div>      
         <div class="tab-content">
+          <!-- about Image-->
+          <div class="tab-pane" id="image">
+            <div class="row"> 
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                    <input type="file" id="wizard-picture" name="image[]" multiple>
+                  </div>
+                  <h6>Choose Picture</h6>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
+                    <input type="file" id="wizard-picture1" name="image[]" multiple>
+                  </div>
+                  <h6>Choose Picture</h6>
+                </div>
+              </div> 
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview2" />
+                    <input type="file" id="wizard-picture2" name="image[]" multiple>
+                  </div>
+                  <h6>Choose Picture</h6>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                  <label class="control-label">Video Link</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+               <div class="col-sm-12">
+                <div class="form-group label-floating">
+                <label class="control-label">Sponser Status</label>
+                   <select name="country" class="form-control">
+                    <option disabled="" selected=""></option>
+                    <option value="0" > Sponsered</option>
+                    <option value="1" selected> Not Sponsered</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- About Child -->
           <div class="tab-pane" id="aboutChild">
             <div class="row">
@@ -90,7 +136,6 @@
                     <option value="Christian"> Christian </option>
                   </select>
                 </div>
-
               </div>
               
               <div class="col-sm-4 ">
@@ -772,48 +817,8 @@
                <div class="col-sm-4 ">
                 <div class="form-group label-floating">
                   <input type="date" class="form-control">
-                  
                 </div>
               </div>
-            </div>
-          </div>
-
-      <!-- about Image-->
-          <div class="tab-pane" id="image">
-            <div class="row"> 
-              <div class="col-sm-4">
-                <div class="picture-container">
-                  <div class="picture">
-                    <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                    <input type="file" id="wizard-picture" name="image[]" multiple>
-                  </div>
-                  <h6>Choose Picture</h6>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="picture-container">
-                  <div class="picture">
-                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
-                    <input type="file" id="wizard-picture1" name="image[]" multiple>
-                  </div>
-                  <h6>Choose Picture</h6>
-                </div>
-              </div> 
-              <div class="col-sm-4">
-                <div class="picture-container">
-                  <div class="picture">
-                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview2" />
-                    <input type="file" id="wizard-picture2" name="image[]" multiple>
-                  </div>
-                  <h6>Choose Picture</h6>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="form-group label-floating">
-                  <label class="control-label">Video Link</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div> 
             </div>
           </div>
         <div class="wizard-footer">
