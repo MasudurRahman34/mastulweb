@@ -9,10 +9,10 @@
                       <h4 class="card-title">Info</h4>
                       <div class="owl-carousel owl-theme full-width">
                         <div class="item">
-                          <img src="{{asset('admin/images/carousel/cpic1.jpg')}}" height="250"/>
+                          <img src="{{asset('admin/images/carousel/antara.jpg')}}" height="250" />
                         </div>
                         <div class="item">
-                          <img src="{{asset('admin/images/carousel/banner_2.jpg')}}" />
+                          <img src="{{asset('admin/images/carousel/cpic1.jpg')}}" height="250"/>
                         </div>
                         <div class="item">
                         <img src="{{asset('admin/images/carousel/banner_1.jpg')}}" />
@@ -75,37 +75,48 @@
                       <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info">
                         <form action="#">
                           <div class="table-responsive">
-                            <table class="table table-hover">      
+                            <table class="table table-hover">
+                            <p>Child ID :  012318ADJK</p>      
                               <tbody>
                                 <tr>
                                   <th>Name</th>
-                                  <td>Photoshopsadfasdfasdfdsfadfasfsadfsdff dsfgsdfg dsfgsdfgs</td>
-                                  <th>Name</th>
-                                  <td>Photoshop sdfgsdgsdg</td>
+                                  <td>Miss Antara Khatun</td>
+                                  <td>Male/Female</td>
+                                  <th>Age</th>
+                                  <td>13 Years</td>
                                 </tr>
                                 <tr>
-                                  <th>Father Name</th>
-                                  <td>Photoshop</td>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
+                                  <th>Birth Date</th>
+                                  <td>12 Sep 2005</td>
+                                  <th>Religious</th>
+                                  <td>{{"Islam"}}</td>
+                                  <td>Blood: AB+</td>
                                 </tr>
                                 <tr>
-                                  <th>Mothers Name</th>
-                                  <td>Photoshop</td>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
+                                  <th>Father's Name</th>
+                                  <td>Kuddus Alom</td>
+                                  <th>Mother's Name</th>
+                                  <td>Oyhika Begum</td>
                                 </tr>
                                 <tr>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
+                                  <th></th>
+                                  <td>Driver</td>
+                                  <th></th>
+                                  <td>HouseWife</td>
                                 </tr>
                                 <tr>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
+                                  <th>Contact No.</th>
+                                  <td>01789404035 </td>
+                                  <th></th>
+                                  <td>01288499785</td>
+                                </tr>
+                                <tr>
+                                  <th>Local Address</th>
+                                  <td>Jhaochar  </td>
+                                </tr>
+                                <tr>
+                                  <th>Permanent Address</th>
+                                  <td>Jhaochar  </td>
                                 </tr>
                               </tbody>
                             </table>
