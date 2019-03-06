@@ -74,43 +74,29 @@
                     <div class="tab-content" id="myTabContent">
                       <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info">
                         <form action="#">
-                          <div class="table-responsive">
-                            <table class="table table-hover">      
-                              <tbody>
-                                <tr>
-                                  <th>Name</th>
-                                  <td>Photoshopsadfasdfasdfdsfadfasfsadfsdff dsfgsdfg dsfgsdfgs</td>
-                                  <th>Name</th>
-                                  <td>Photoshop sdfgsdgsdg</td>
-                                </tr>
-                                <tr>
-                                  <th>Father Name</th>
-                                  <td>Photoshop</td>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
-                                </tr>
-                                <tr>
-                                  <th>Mothers Name</th>
-                                  <td>Photoshop</td>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
-                                </tr>
-                                <tr>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
-                                </tr>
-                                <tr>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
-                                  <th>Name</th>
-                                  <td>Photoshop</td>
-                                </tr>
-                              </tbody>
-                            </table>
+                         <div class="form-group label-floating">
+                       <p>asdkf</p> 
+                        </div>
+                          <div class="form-group">
+                            <label for="designation">Designation</label>
+                            <input type="text" class="form-control" id="designation" placeholder="Change designation">
                           </div>
-                         
+                          <div class="form-group">
+                            <label for="mobile">Mobile Number</label>
+                            <input type="text" class="form-control" id="mobile" placeholder="Change mobile number">
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Change email address">
+                          </div>
+                          <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea name="address" id="address" rows="6" class="form-control" placeholder="Change address"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="website">Website URL</label>
+                            <input type="text" class="form-control" id="website" placeholder="Change website url">
+                          </div>
                           <div class="form-group mt-5">
                             <button type="submit" class="btn btn-success mr-2">Update</button>
                             <button class="btn btn-outline-danger">Cancel</button>

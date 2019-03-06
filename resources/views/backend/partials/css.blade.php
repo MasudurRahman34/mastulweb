@@ -28,7 +28,15 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('admin/childForm/assets/css/demo.css" rel="stylesheet')}}" />
 
-   <!--Child Profile Page -->
-  <link rel="stylesheet" href="{{asset('admin/node_modules/dropify/dist/css/dropify.min.css')}}">
-  <!-- End plugin css for this page -->
+    <!--Child Profile Page -->
+      <link rel="stylesheet" href="{{asset('admin/node_modules/dropify/dist/css/dropify.min.css')}}"/>
+      <!-- context menu -->
+      <link rel="stylesheet" href="{{asset('admin/node_modules/jquery-contextmenu/dist/jquery.contextMenu.min.css')}}" />
+      <!-- End context -->
+      <!-- carousel -->
+      <link rel="stylesheet" href="{{asset('admin/node_modules/owl-carousel-2/assets/owl.carousel.min.css')}}" />
+      <link rel="stylesheet" href="{{asset('admin/node_modules/owl-carousel-2/assets/owl.theme.default.min.css')}}" />
+      <!-- end carousel -->
+  <!-- End profile page -->
+
   <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">

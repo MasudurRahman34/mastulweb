@@ -41,7 +41,16 @@
   <!--  Plugin for the Wizard -->
   <script src="{{asset('admin/childForm/assets/js/material-bootstrap-wizard.js')}}"></script>
 <!-- Plugin js for profile page-->
-  <script src="{{asset('admin/node_modules/dropify/dist/js/dropify.min.js')}}"></script>
+    <script src="{{asset('admin/node_modules/dropify/dist/js/dropify.min.js')}}"></script>
       <!-- custom -->
-  <script src="{{asset('admin/js/dropify.js')}}"></script>
-  <!-- End plugin profile page-->
+    <script src="{{asset('admin/js/dropify.js')}}"></script>
+    <!-- context menu -->
+   <script src="{{asset('admin/node_modules/jquery-contextmenu/dist/jquery.contextMenu.min.js')}}"></script>
+   <!--custom context menu -->
+   <script src="{{asset('admin/js/context-menu.js')}}"></script>
+   <!-- carousel  -->
+   <script src="{{asset('admin/node_modules/owl-carousel-2/owl.carousel.min.js')}}"></script>
+   <!-- custome carousel -->
+   <script src="{{asset('admin/js/owl-carousel.js')}}"></script>
+   <!-- end carousel -->
+<!-- End plugin profile page-->
