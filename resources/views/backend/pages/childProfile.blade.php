@@ -74,8 +74,159 @@
                     <div class="tab-content" id="myTabContent">
                       <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info">
                         <form action="#">
-                          
-                         
+                          <div class="row">
+                            <div class="col-md-12">
+                              <address>
+                                <p> <span class="font-weight-bold">Child ID :</span> {{"01734058avcd"}}</p>
+                              </address>
+                            </div>
+                                <!-- <div class="col-md-6">
+                                  <div class="row"> -->
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold">Name</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <p class="">{{"Antara begum  Khanom "}}</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                      <p class="font-weight-bold">Female</p>
+                                    </div>
+                                    <div class="col-md-1">
+                                      <p class="font-weight-bold">Age</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                      <p class="">13 years</p>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold">Birth Date</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <p class="">{{"12 Sep 2005"}}</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                      <p class="font-weight-bold">Religious</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                      <p class="">{{"Islam"}}</p>
+                                    </div>      
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold ">Father's Name</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="">{{"Kuddus Alom Khanom"}}</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold text-center">Mother's Name</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="">{{"Hiramoti Bibi"}}</p>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold"></p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold">{{"Driver"}}</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold"></p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold">{{"Housewife"}}</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold">Contact No</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="">{{"01750687951"}}</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold"></p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="">{{"01750687951"}}</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold">Local Address </p>
+                                    </div>
+                                    <div class="col-md-9">
+                                      <p class="">{{"Jhaochar, 150, Life Care Hospital, Hajaribag, Mohammadpur, Dhaka"}}</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                      <p class="font-weight-bold">Permanent Address </p>
+                                    </div>
+                                    <div class="col-md-9">
+                                      <p class="">{{"Jhaochar, 150, Life Care Hospital, Hajaribag, Mohammadpur, Dhaka"}}</p>
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <address>
+                                      <h4 class="font-weight-bold text-light bg-info" style="padding: 5px">Dreams And Likes </h4>
+                                    </address>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <p class="font-weight-bold ">Color</p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <p class="">{{"Green, Red"}}</p>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <p class="font-weight-bold text-center">Food</p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <p class="">{{"Icecream, Achar, Frouts"}}</p>
+                                  </div>
+
+                                  <div class="col-md-2">
+                                    <p class="font-weight-bold ">Sports</p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <p class="">{{"Criket, Football"}}</p>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <p class="font-weight-bold text-center">Hobby</p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <p class="">{{"Singing, Dancing, Reading"}}</p>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <p class="font-weight-bold ">Skill</p>
+                                  </div>
+                                  <div class="col-md-10">
+                                    <p class="">{{"Singing, Dancing, Reading"}}</p>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <p class="font-weight-bold ">Favorite Personality</p>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <p class="">{{"Father"}}</p>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <p class="font-weight-bold ">Favorite Teacher</p>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <p class="">{{"Abdul Shorif"}}</p>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <p class="font-weight-bold ">Favorite place</p>
+                                  </div>
+                                  <div class="col-md-9">
+                                    <p class="">{{"Botanical Garden"}}</p>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <p class="font-weight-bold ">Child Says</p>
+                                  </div>
+                                  <div class="col-md-9">
+                                     <footer class="blockquote-footer">"Someone famous in <cite title="Source Title">Source Title</cite>"</footer>
+                                  </div>
+                                  
+                                </div>
+
+
                           <div class="form-group mt-5">
                             <button type="submit" class="btn btn-success mr-2">Update</button>
                             <button class="btn btn-outline-danger">Cancel</button>

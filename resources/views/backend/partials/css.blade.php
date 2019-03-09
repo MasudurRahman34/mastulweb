@@ -40,3 +40,4 @@
   <!-- End profile page -->
 
   <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/css/overright.css')}}">
