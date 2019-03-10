@@ -62,6 +62,9 @@
                         <a class="nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-expanded="true">Info</a>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="security">Contact</a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link" id="avatar-tab" data-toggle="tab" href="#avatar" role="tab" aria-controls="avatar">Avatar</a>
                       </li>
                       <li class="nav-item">
@@ -77,7 +80,7 @@
                           <div class="row">
                             <div class="col-md-12">
                               <address>
-                                <p> <span class="font-weight-bold">Child ID :</span> {{"01734058avcd"}}</p>
+                                <p> <span class="font-weight-bold text-info">Child ID :</span> {{"01734058avcd"}}</p>
                               </address>
                             </div>
                                 <!-- <div class="col-md-6">
@@ -233,10 +236,85 @@
                           </div>
                         </form>
                       </div><!-- tab content ends -->
+
+                      <!-- //contact info -->
+                      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="security-tab">
+                        <form action="#">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <address>
+                                <p> <span class="font-weight-bold text-info">House Owner Information</span></p>
+                              </address>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Name-</b>{{"Antara begum  Khanom "}}</p>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Contact no-</b>{{"01830950697 "}}</p>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Address-</b>{{"Jhaochar, 150, Life Care Hospital, Hajaribag, Mohammadpur, Dhaka"}}</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <address>
+                                <p> <span class="font-weight-bold text-info">Siblings Information</span></p>
+                              </address>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Name-</b>{{"Antara begum  Khanom "}}</p>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Contact no-</b>{{"01830950697 "}}</p>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Address-</b>{{"Jhaochar, 150, Life Care Hospital, Hajaribag, Mohammadpur, Dhaka"}}</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <address>
+                                <p> <span class="font-weight-bold text-info">Relative's Information</span></p>
+                              </address>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Name-</b>{{"Antara begum  Khanom "}}</p>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Contact no-</b>{{"01830950697 "}}</p>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Address-</b>{{"Jhaochar, 150, Life Care Hospital, Hajaribag, Mohammadpur, Dhaka"}}</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <address>
+                                <p> <span class="font-weight-bold text-info">Neighbour's Information</span></p>
+                              </address>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Name-</b>{{"Antara begum  Khanom "}}</p>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Contact no-</b>{{"01830950697 "}}</p>
+                            </div>
+                            <div class="col-md-4">
+                              <p class=""><b>Address-</b>{{"Jhaochar, 150, Life Care Hospital, Hajaribag, Mohammadpur, Dhaka"}}</p>
+                            </div>
+                          </div>
+                          <div class="form-group mt-5">
+                            <button type="submit" class="btn btn-success mr-2">Update</button>
+                            <button class="btn btn-outline-danger">Cancel</button>
+                          </div>
+                        </form>
+                      </div>
+
                       <div class="tab-pane fade" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
                         <div class="wrapper mb-5 mt-4">
                           <span class="badge badge-warning text-white">Note : </span>
-                          <p class="d-inline ml-3 text-muted">Image size is limited to not greater than 1MB .</p>
+                          <p class="d-inline ml-3 text-muted">Image size is limited to not greater than 1MB.</p>
                         </div>
                         <form action="#">
                           <input type="file" class="dropify" data-max-file-size="1mb" data-default-file="../../images/faces/face6.jpg"/>
@@ -246,6 +324,7 @@
                           </div>
                         </form>
                       </div>
+
                       <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
                         <form action="#">
                           <div class="form-group">
