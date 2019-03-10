@@ -175,7 +175,7 @@
                                     <p class="">{{"Green, Red"}}</p>
                                   </div>
                                   <div class="col-md-2">
-                                    <p class="font-weight-bold text-center">Food</p>
+                                    <p class="font-weight-bold">Food</p>
                                   </div>
                                   <div class="col-md-4">
                                     <p class="">{{"Icecream, Achar, Frouts"}}</p>
@@ -188,7 +188,7 @@
                                     <p class="">{{"Criket, Football"}}</p>
                                   </div>
                                   <div class="col-md-2">
-                                    <p class="font-weight-bold text-center">Hobby</p>
+                                    <p class="font-weight-bold">Hobby</p>
                                   </div>
                                   <div class="col-md-4">
                                     <p class="">{{"Singing, Dancing, Reading"}}</p>
@@ -215,13 +215,13 @@
                                     <p class="font-weight-bold ">Favorite place</p>
                                   </div>
                                   <div class="col-md-9">
-                                    <p class="">{{"Botanical Garden"}}</p>
+                                    <p class="font-weight-light">{{"Botanical Garden"}}</p>
                                   </div>
                                   <div class="col-md-3">
                                     <p class="font-weight-bold ">Child Says</p>
                                   </div>
                                   <div class="col-md-9">
-                                     <footer class="blockquote-footer">"Someone famous in <cite title="Source Title">Source Title</cite>"</footer>
+                                     <footer class="blockquote-footer" style="font-size: 130%">"Someone famous in <cite title="Source Title">Source Title</cite>"</footer>
                                   </div>
                                   
                                 </div>
