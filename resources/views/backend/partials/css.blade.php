@@ -25,7 +25,7 @@
 
   <!-- CSS Files -->
   
-  <link href="{{asset('admin/childForm/assets/css/material-bootstrap-wizard.css')}}" rel="stylesheet" />
+  
 
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('admin/childForm/assets/css/demo.css" rel="stylesheet')}}" />

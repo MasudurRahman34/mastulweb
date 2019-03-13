@@ -2,6 +2,7 @@
 
   @section('content')
   <link rel="shortcut icon" hreadmin/images/favicon.html" /></head>
+  <link href="{{asset('admin/childForm/assets/css/material-bootstrap-wizard.css')}}" rel="stylesheet" />
   <!-- partial -->
   <!--  <input class="mdl-textfield__input" type="text" id="sample3">
    <label class="mdl-textfield__label" for="sample3">Text...</label> -->
@@ -68,11 +69,29 @@
                <div class="col-sm-12">
                 <div class="form-group label-floating">
                 <label class="control-label">Sponser Status</label>
-                   <select name="country" class="form-control">
+                   <select name="country" class="form-control" onchange="myFunction()" id="mySelect">
                     <option disabled="" selected=""></option>
                     <option value="0" > Sponsered</option>
                     <option value="1" selected> Not Sponsered</option>
                   </select>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <p id="demo"></p>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                <label class="control-label">Sponser Status</label>
+                <form action="" method="" name="myform">
+                  <input type="text" name="t1" onchange="docCal(this.form, this.name)">
+
+                  <input type="checkbox" name="chbox" onclick="docCal(this.form, this.name)">
+
+                  <input type="text" name="result" onchange="docCal(this.form, this.name)">
+
+                  <input type="reset" name="Refresh">
+
+                </form>
                 </div>
               </div>
             </div>
@@ -842,8 +861,32 @@
 </div>
 </div>
 </div>
+
 <!--vertical wizard-->
 </div>
+
+<script type="text/javascript">
+  function docCal(form, pfield) {
+  if (pfield=="result") {
+    if (form.chbox.checked) {
+      form.t1.value=math.sqrt(form.result.value);
+    }
+  } else {
+    if (form.chbox.checked) {
+      form.result.value=form.t1.value*form.t1.value;
+    } else {
+      form.result.value=form.t1.value*2;
+    }
+  }
+}
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+
+
+
+</script>
 @endsection
 <!-- content-wrapper ends -->
 <!-- partial:../../partials/_footer.html -->
