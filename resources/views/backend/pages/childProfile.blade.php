@@ -60,7 +60,7 @@
           <ul class="nav nav-tabs tab-solid tab-solid-primary mb-0" id="myTab" role="tablist">
 
             <li class="nav-item">
-              <a class="nav-link" id="avatar-tab" data-toggle="tab" href="#avatar" role="tab" aria-controls="avatar">Avatar</a>
+              <a class="nav-link" id="gift-tab" data-toggle="tab" href="#gift" role="tab" aria-controls="avatar">Gift</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-expanded="true">Info</a>
@@ -83,7 +83,32 @@
           <hr>
           <div class="tab-content" id="myTabContent">
            <!-- Start Info-tab -->
-           <div class="tab-pane fade" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
+           <div class="tab-pane fade" id="gift" role="tabpanel" aria-labelledby="gift-tab">
+            <div class="col-sm-12">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Add Gift</label>
+                    <select name="country" class="form-control">
+                      <option disabled="" selected=""></option>
+                      <option value="3" > None</option>
+                      <option value="0" > Tution Fees</option>
+                      <option value="1" > Uniform</option>
+                      <option value="1" > Shoes And Sock</option>
+                      <option value="1" > Books</option>
+                      <option value="1" > Exercise Books</option>
+                      <option value="1" > Drawing Books</option>
+                      <option value="1" > Hygiene And Training</option>
+                      <option value="1" > Nutriious Food</option>
+                      <option value="1" > Stationeries</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-4 ">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Age</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <!-- ///if none show additional gift input box, and its cost -->
             <div class="wrapper mb-5 mt-4">
               <span class="badge badge-warning text-white">Note : </span>
               <p class="d-inline ml-3 text-muted">Image size is limited to not greater than 1MB.</p>
