@@ -66,18 +66,95 @@
                   <input type="text" class="form-control">
                 </div>
               </div>
-               <div class="col-sm-12">
+              <div class="col-sm-6">
+                  <div class="form-group">
+                  <label class=""> Additional File(e.g(birth Cirtificate, parents id card)) ?</label>
+                </div>
+              </div>
+              <div class="col-sm-3">
                 <div class="form-group label-floating">
-                <label class="control-label">Sponser Status</label>
+                  <input type="checkbox" class="" id="chkFile" value="Yes" onclick="fileFunc()">Yes
+                </div>
+              </div>
+              <div class="col-sm-12 border border-primary " id="file" style="display:none;" >
+                <div class="row">
+                <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
+                    <input type="file" id="wizard-picture1" name="birthImage" multiple>
+                  </div>
+                  <h6>Choose Birth Certificate</h6>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
+                    <input type="file" id="wizard-picture1" name="birthImage" multiple>
+                  </div>
+                  <h6>Choose Parent's Nid Cards</h6>
+                </div>
+              </div>
+              </div>
+            </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                  <label class=""> Sponser Status ?</label>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group label-floating">
+                  <input type="checkbox" id="chkSponsor" value="Sponsored" onclick="sponsorFunction()">Sponsored
+                </div>
+              </div>
+
+               <div class="col-sm-12 border border-info" id="sponsor" style="display:none;">
+                <div class="form-group label-floating">
+                <label class="control-label">Please Select Sponser Name</label>
                    <select name="country" class="form-control" onchange="myFunction()" id="mySelect">
                     <option disabled="" selected=""></option>
-                    <option value="0" > Sponsered</option>
-                    <option value="1" selected> Not Sponsered</option>
+                    <option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option>
                   </select>
                 </div>
               </div>
               <div class="col-sm-12">
                 <p id="demo"></p>
+              </div>
+              <div class="col-sm-12" id="demo2" style="display: none;" >
+                <p> gsdrgsr</p>
               </div>
               <div class="col-sm-12">
                 <div class="form-group label-floating">
@@ -881,9 +958,41 @@
 }
 function myFunction() {
   var x = document.getElementById("mySelect").value;
-  document.getElementById("demo").innerHTML = "You selected: " + x;
+
+  if (x==1) {
+    var e=document.getElementById("demo2");
+    if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+  }
+  if (x==0) {
+    var e=document.getElementById("demo2");
+    if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+  }
 }
 
+function fileFunc(){
+  var chk= document.getElementById("chkFile");
+  var text= document.getElementById("file")
+  if (chk.checked==true) {
+   text.style.display="block";
+  }else{
+    text.style.display="none";
+  }
+}
+function sponsorFunction(){
+  var chk= document.getElementById("chkSponsor");
+  var text= document.getElementById("sponsor")
+  if (chk.checked==true) {
+   text.style.display="block";
+  }else{
+    text.style.display="none";
+  }
+}
 
 
 </script>
