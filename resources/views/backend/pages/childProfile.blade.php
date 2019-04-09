@@ -1,6 +1,38 @@
  @extends('backend.layouts.master')
  @section('content')
- <div class="row user-profile">
+ <style type="text/css">
+ .additionalStipend{
+  display:none;}
+  .picture-container {
+    position: relative;
+    cursor: pointer;
+    text-align: center; }
+  .picture {
+    width: 106px;
+    height: 106px;
+    background-color: #999999;
+    border: 4px solid #CCCCCC;
+    color: #FFFFFF;
+    border-radius: 50%;
+    margin: 5px auto;
+    overflow: hidden;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s; }
+  .picture:hover {
+      border-color: #2ca8ff; }
+  .picture input[type="file"] {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+  .wizard-card .picture-src {
+    width: 100%; }
+</style>
+<div class="row user-profile">
   <div class="col-lg-4 ">
     <div class="row">
       <div class="col-12 grid-margin stretch-card">
@@ -60,7 +92,7 @@
           <ul class="nav nav-tabs tab-solid tab-solid-primary mb-0" id="myTab" role="tablist">
 
             <li class="nav-item">
-              <a class="nav-link" id="gift-tab" data-toggle="tab" href="#gift" role="tab" aria-controls="avatar">Gift</a>
+              <a class="nav-link" id="stipend-tab" data-toggle="tab" href="#stipend" role="tab" aria-controls="stipend">Stipends</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-expanded="true">Info</a>
@@ -81,46 +113,113 @@
         </div>
         <div class="wrapper">
           <hr>
-          <div class="tab-content" id="myTabContent">
+          <div class="tab-content" id="myTabContent" style="padding-top: 1px;">
            <!-- Start Info-tab -->
-           <div class="tab-pane fade" id="gift" role="tabpanel" aria-labelledby="gift-tab">
-            <div class="col-sm-12">
-                  <div class="form-group label-floating">
-                    <label class="control-label">Add Gift</label>
-                    <select name="country" class="form-control">
-                      <option disabled="" selected=""></option>
-                      <option value="3" > None</option>
-                      <option value="0" > Tution Fees</option>
-                      <option value="1" > Uniform</option>
-                      <option value="1" > Shoes And Sock</option>
-                      <option value="1" > Books</option>
-                      <option value="1" > Exercise Books</option>
-                      <option value="1" > Drawing Books</option>
-                      <option value="1" > Hygiene And Training</option>
-                      <option value="1" > Nutriious Food</option>
-                      <option value="1" > Stationeries</option>
-                    </select>
-                  </div>
+           <div class="tab-pane fade" id="stipend" role="tabpanel" aria-labelledby="stipend-tab">
+            <div class="row">
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal-4" data-whatever="@fat">Add Stidents</button>
+                
+              
+              <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add Stipends</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" style="padding-top:5px;">
+                      
+                      <form>
+                        <div class="row">
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Select Stipends</label>
+                          <select name="country" class="form-control" id="selectStipend" onclick="noneStiped()">
+                            <option disabled="" selected=""></option>
+                            <option value="3" > None</option>
+                            <option value="0" > Tution Fees</option>
+                            <option value="1" > Uniform</option>
+                            <option value="1" > Shoes And Sock</option>
+                            <option value="1" > Books</option>
+                            <option value="1" > Exercise Books</option>
+                            <option value="1" > Drawing Books</option>
+                            <option value="1" > Hygiene And Training</option>
+                            <option value="1" > Nutriious Food</option>
+                            <option value="1" > Stationeries</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                         <label for="message-text" class="col-form-label">Date</label>
+                         <input type="date" class="form-control">
+                       </div>
+                     </div>
+                      <div class="col-sm-6">
+                        <div class="form-group additionalStipend">
+                          <label for="recipient-name" class="col-form-label">Add Stipend Name:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                      </div>
+                         <div class="col-sm-6">
+                        <div class="form-group additionalStipend">
+                          <label for="message-text" class="col-form-label">Price</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                       <div class="form-group">
+                        <label for="message-text" class="col-form-label">Comment</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                    </div>
+                      
+                       <div class="col-sm-4">
+                        <div class="picture-container">
+                          <div class="picture">
+                            <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                            <input type="file" id="wizard-picture" name="image[]" multiple>
+                          </div>
+                          <h6>Choose Picture</h6>
+                        </div>
+                      </div><div class="col-sm-4">
+                        <div class="picture-container">
+                          <div class="picture">
+                            <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                            <input type="file" id="wizard-picture" name="image[]" multiple>
+                          </div>
+                          <h6>Choose Picture</h6>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="picture-container">
+                          <div class="picture">
+                            <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                            <input type="file" id="wizard-picture" name="image[]" multiple>
+                          </div>
+                          <h6>Choose Picture</h6>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                       <div class="form-group">
+                        <label for="message-text" class="col-form-label">Video link</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                    </div>
+                    </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success">Submit</button>
+                  <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
                 </div>
-                <div class="col-sm-4 ">
-                  <div class="form-group label-floating">
-                    <label class="control-label">Age</label>
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-                <!-- ///if none show additional gift input box, and its cost -->
-            <div class="wrapper mb-5 mt-4">
-              <span class="badge badge-warning text-white">Note : </span>
-              <p class="d-inline ml-3 text-muted">Image size is limited to not greater than 1MB.</p>
-            </div>
-            <form action="#">
-              <input type="file" class="dropify" data-max-file-size="1mb" data-default-file="../../images/faces/face6.jpg"/>
-              <div class="form-group mt-5">
-                <button type="submit" class="btn btn-success mr-2">Update</button>
-                <button class="btn btn-outline-danger">Cancel</button>
               </div>
-            </form>
+            </div>
           </div>
+        </div>
+        </form>
+      </div>
+    </div>
           <!-- End Info-tab -->
 
           <!-- Start Info-tab --> 
@@ -602,91 +701,91 @@
 
     <!-- //comment-tab -->
     <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="comment-tab">   
-        <div class="row">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <address>
-                  <p> <span class="font-weight-bold text-info">Brilliancy</span></p>
-                </address>
-              </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <address>
+                <p> <span class="font-weight-bold text-info">Brilliancy</span></p>
+              </address>
+            </div>
 
-              <div class="col-md-12">
-                <address>
-                  <p> <span class="font-weight-bold">{{"Satisfactory"}}</span></p>
-                </address>
-              </div>
+            <div class="col-md-12">
+              <address>
+                <p> <span class="font-weight-bold">{{"Satisfactory"}}</span></p>
+              </address>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <address>
-                  <p> <span class="font-weight-bold text-info">Behaviour</span></p>
-                </address>
-              </div>
-              <div class="col-md-12">
-                <address>
-                  <p> <span class="font-weight-bold">{{"Very Good"}}</span></p>
-                </address>
-              </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <address>
+                <p> <span class="font-weight-bold text-info">Behaviour</span></p>
+              </address>
             </div>
-          </div>  
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-12">
-                <address>
-                  <p> <span class="font-weight-bold text-info">Attendance</span></p>
-                </address>
-              </div>
-              <div class="col-md-12">
-                <address>
-                  <p> <span class="font-weight-bold">{{"Good"}}</span></p>
-                </address>
-              </div>
+            <div class="col-md-12">
+              <address>
+                <p> <span class="font-weight-bold">{{"Very Good"}}</span></p>
+              </address>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-12">
-                <address>
-                  <p> <span class="font-weight-bold text-info">Comments</span></p>
-                </address>
-              </div>
-
-              <div class="col-md-12">
-                <address>
-                  <p> <span class="font-weight-bold">{{"She is Good Student"}}</span></p>
-                </address>
-              </div>
+        </div>  
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <address>
+                <p> <span class="font-weight-bold text-info">Attendance</span></p>
+              </address>
+            </div>
+            <div class="col-md-12">
+              <address>
+                <p> <span class="font-weight-bold">{{"Good"}}</span></p>
+              </address>
             </div>
           </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <address>
+                <p> <span class="font-weight-bold text-info">Comments</span></p>
+              </address>
+            </div>
 
+            <div class="col-md-12">
+              <address>
+                <p> <span class="font-weight-bold">{{"She is Good Student"}}</span></p>
+              </address>
+            </div>
+          </div>
         </div>
 
-    <div class="form-group mt-3">
-      <button type="submit" class="btn btn-success mr-2">Update</button>
-      <button class="btn btn-outline-danger">Cancel</button>
-    </div>
-  </form>
-</div>
-<!-- end Comment tab -->
+      </div>
 
-<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-  <form action="#">
-    <div class="form-group">
-      <label for="change-password">Change password</label>
-      <input type="password" class="form-control" id="change-password" placeholder="Enter you current password">
-    </div>
-    <div class="form-group">
-      <input type="password" class="form-control" id="new-password" placeholder="Enter you new password">
-    </div>
-    <div class="form-group mt-5">
-      <button type="submit" class="btn btn-success mr-2">Update</button>
-      <button class="btn btn-outline-danger">Cancel</button>
-    </div>
-  </form>
-</div>
+      <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success mr-2">Update</button>
+        <button class="btn btn-outline-danger">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <!-- end Comment tab -->
+
+  <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+    <form action="#">
+      <div class="form-group">
+        <label for="change-password">Change password</label>
+        <input type="password" class="form-control" id="change-password" placeholder="Enter you current password">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="new-password" placeholder="Enter you new password">
+      </div>
+      <div class="form-group mt-5">
+        <button type="submit" class="btn btn-success mr-2">Update</button>
+        <button class="btn btn-outline-danger">Cancel</button>
+      </div>
+    </form>
+  </div>
 </div>
 </div>
 </div>
@@ -694,4 +793,30 @@
 </div>
 </div>
 
-@endsection
+<script type="text/javascript">
+
+
+  function noneStiped() {
+    var x = document.getElementById("selectStipend").value;
+
+    if (x==3) {
+      var e=document.getElementsByClassName("additionalStipend");
+      for (var i=0;i<e.length;i+=1){
+        if(e[i].style.display == 'block')
+          e[i].style.display = 'none';
+        else
+          e[i].style.display = 'block';
+      }
+    }
+  /*if (x!==3) {
+    var e=document.getElementById("additionalGift");
+    if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+      }*/
+    }
+
+  </script>
+
+  @endsection
