@@ -16,7 +16,7 @@
   <script src="{{asset('admin/node_modules/chartist-plugin-legend/chartist-plugin-legend.js')}} "></script>
   <script src="{{asset('admin/node_modules/chart.js/dist/Chart.min.js')}} "></script>
   <script src="{{asset('admin/node_modules/d3/d3.min.js')}} "></script>
-  <script src="{{asset('admin/node_modules/c3/c3.min.js')}} "></script>
+  
   <!-- End plugin js for this page-->
   <!-- inject:js -->
   <script src="{{asset('admin/js/off-canvas.js')}} "></script>
@@ -25,4 +25,29 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{{asset('admin/js/dashboard.js')}} "></script>
+
+  
+  <script src="{{asset('admin/node_modules/jquery-steps/build/jquery.steps.min.js')}} "></script>
+  <script src="{{asset('admin/node_modules/jquery-validation/dist/jquery.validate.min.js')}} "></script>
+
+
+  
+  <script src="{{asset('admin/js/wizard.js')}} "></script>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <!-- End custom js for this page-->
+
+
+  <!--  Plugin for Child-Form Page Wizard -->
+  <script src="{{asset('admin/childForm/assets/js/jquery.bootstrap.js')}} "></script>
+  <script src="{{asset('admin/childForm/assets/js/material-bootstrap-wizard.js')}}"></script>
+
+
+   <!-- Plugin js for Child-List page-->
+  <script src="{{asset('admin/node_modules/datatables.net/js/jquery.dataTables.js')}}"></script>
+  <script src="{{asset('admin/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js')}}"></script>
+ 
+  <!-- Custom js for Child-List page-->
+  <script src="{{asset('admin/js/data-table.js')}}"></script>
+  
+
+   <!-- End custom js for Child-List page-->
