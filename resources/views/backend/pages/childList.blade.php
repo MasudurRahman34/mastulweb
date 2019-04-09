@@ -4,7 +4,7 @@
           <div class="card">
             <div class="card-body">
               <div class="row">
-                <h4 class="card-title">Child List</h4>
+                <h4 class="card-title" style="margin-bottom: -5.35rem; margin-left: 400px;">Child List </h4>
                 <div class="col-12 table-responsive "  style="overflow-x:auto;">
                   <table id="order-listing" class="table table-hover" cellspacing="10" style="display: block !important; table-layout: fixed; width: 100%">
                     <thead>
