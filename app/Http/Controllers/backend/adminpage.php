@@ -30,6 +30,12 @@ class adminpage extends Controller
       
     }
 
+    public function childProfile()
+    {
+      return view('backend.pages.childProfile');
+      
+    }
+
     /**
      * Show the form for creating a new resource.
      *

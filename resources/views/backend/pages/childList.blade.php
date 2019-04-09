@@ -1,6 +1,11 @@
  @extends('backend.layouts.master')
   @section('content')
   <!-- <link rel="stylesheet" href="../../node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" /> -->
+        <div class="row">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <h4 class="card-title">Child List</h4>
           <div class="card">
             <div class="card-body">
               <div class="row">
@@ -89,4 +94,5 @@
               </div>
             </div>
           </div>
+        </div>
   @endsection

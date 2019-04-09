@@ -23,11 +23,11 @@
          @include ('backend.partials.sidebar')
         <!-- partial -->
         <div class="content-wrapper">
-          <div class="row">
+          
             @yield('content')
              
             
-          </div>
+          
           <!-- ROW ENDS -->
         </div>
         <!-- content-wrapper ends -->
