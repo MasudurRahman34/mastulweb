@@ -2,6 +2,7 @@
 
   @section('content')
   <link rel="shortcut icon" hreadmin/images/favicon.html" /></head>
+  <link href="{{asset('admin/childForm/assets/css/material-bootstrap-wizard.css')}}" rel="stylesheet" />
   <!-- partial -->
   <!--  <input class="mdl-textfield__input" type="text" id="sample3">
    <label class="mdl-textfield__label" for="sample3">Text...</label> -->
@@ -19,18 +20,82 @@
          </div>
          <div class="wizard-navigation">
           <ul>
+            <li><a href="#image" data-toggle="tab">Image</a></li>
             <li><a href="#aboutChild" data-toggle="tab">Child Info</a></li>
             <li><a href="#aboutParent" data-toggle="tab">Parent Info</a></li>
             <li><a href="#dreamLike" data-toggle="tab">Dream-Likes</a></li>
             <li><a href="#gardianSurvey" data-toggle="tab">Survey</a></li>
             <li><a href="#contact" data-toggle="tab">Contact</a></li>
             <li><a href="#verify" data-toggle="tab">Verify</a></li>
-            <li><a href="#image" data-toggle="tab">Image</a></li>
           </ul>
-        </div>
-
-        
+        </div>      
         <div class="tab-content">
+          <!-- about Image-->
+          <div class="tab-pane" id="image">
+            <div class="row"> 
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
+                    <input type="file" id="wizard-picture" name="image[]" multiple>
+                  </div>
+                  <h6>Choose Picture</h6>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
+                    <input type="file" id="wizard-picture1" name="image[]" multiple>
+                  </div>
+                  <h6>Choose Picture</h6>
+                </div>
+              </div> 
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview2" />
+                    <input type="file" id="wizard-picture2" name="image[]" multiple>
+                  </div>
+                  <h6>Choose Picture</h6>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                  <label class="control-label">Video Link</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+               <div class="col-sm-12">
+                <div class="form-group label-floating">
+                <label class="control-label">Sponser Status</label>
+                   <select name="country" class="form-control" onchange="myFunction()" id="mySelect">
+                    <option disabled="" selected=""></option>
+                    <option value="0" > Sponsered</option>
+                    <option value="1" selected> Not Sponsered</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <p id="demo"></p>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                <label class="control-label">Sponser Status</label>
+                <form action="" method="" name="myform">
+                  <input type="text" name="t1" onchange="docCal(this.form, this.name)">
+
+                  <input type="checkbox" name="chbox" onclick="docCal(this.form, this.name)">
+
+                  <input type="text" name="result" onchange="docCal(this.form, this.name)">
+
+                  <input type="reset" name="Refresh">
+
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- About Child -->
           <div class="tab-pane" id="aboutChild">
             <div class="row">
@@ -90,7 +155,6 @@
                     <option value="Christian"> Christian </option>
                   </select>
                 </div>
-
               </div>
               
               <div class="col-sm-4 ">
@@ -772,48 +836,8 @@
                <div class="col-sm-4 ">
                 <div class="form-group label-floating">
                   <input type="date" class="form-control">
-                  
                 </div>
               </div>
-            </div>
-          </div>
-
-      <!-- about Image-->
-          <div class="tab-pane" id="image">
-            <div class="row"> 
-              <div class="col-sm-4">
-                <div class="picture-container">
-                  <div class="picture">
-                    <img src="assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title=""/>
-                    <input type="file" id="wizard-picture" name="image[]" multiple>
-                  </div>
-                  <h6>Choose Picture</h6>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="picture-container">
-                  <div class="picture">
-                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
-                    <input type="file" id="wizard-picture1" name="image[]" multiple>
-                  </div>
-                  <h6>Choose Picture</h6>
-                </div>
-              </div> 
-              <div class="col-sm-4">
-                <div class="picture-container">
-                  <div class="picture">
-                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview2" />
-                    <input type="file" id="wizard-picture2" name="image[]" multiple>
-                  </div>
-                  <h6>Choose Picture</h6>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="form-group label-floating">
-                  <label class="control-label">Video Link</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div> 
             </div>
           </div>
         <div class="wizard-footer">
@@ -837,8 +861,32 @@
 </div>
 </div>
 </div>
+
 <!--vertical wizard-->
 </div>
+
+<script type="text/javascript">
+  function docCal(form, pfield) {
+  if (pfield=="result") {
+    if (form.chbox.checked) {
+      form.t1.value=math.sqrt(form.result.value);
+    }
+  } else {
+    if (form.chbox.checked) {
+      form.result.value=form.t1.value*form.t1.value;
+    } else {
+      form.result.value=form.t1.value*2;
+    }
+  }
+}
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+
+
+
+</script>
 @endsection
 <!-- content-wrapper ends -->
 <!-- partial:../../partials/_footer.html -->
