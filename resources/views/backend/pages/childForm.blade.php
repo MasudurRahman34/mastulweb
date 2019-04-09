@@ -2,6 +2,7 @@
 
   @section('content')
   <link rel="shortcut icon" hreadmin/images/favicon.html" /></head>
+  <link href="{{asset('admin/childForm/assets/css/material-bootstrap-wizard.css')}}" rel="stylesheet" />
   <!-- partial -->
   <!--  <input class="mdl-textfield__input" type="text" id="sample3">
    <label class="mdl-textfield__label" for="sample3">Text...</label> -->
@@ -75,6 +76,110 @@
                       <option value="1" selected> Not Sponsered</option>
                     </select>
                   </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                  <label class=""> Additional File(e.g(birth Cirtificate, parents id card)) ?</label>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group label-floating">
+                  <input type="checkbox" class="" id="chkFile" value="Yes" onclick="fileFunc()">Yes
+                </div>
+              </div>
+              <div class="col-sm-12 border border-primary " id="file" style="display:none;" >
+                <div class="row">
+                <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
+                    <input type="file" id="wizard-picture1" name="birthImage" multiple>
+                  </div>
+                  <h6>Choose Birth Certificate</h6>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="picture-container">
+                  <div class="picture">
+                    <img src="assets/img/default-avatar.png" class="picture-src" title="" id="wizardPicturePreview1" />
+                    <input type="file" id="wizard-picture1" name="birthImage" multiple>
+                  </div>
+                  <h6>Choose Parent's Nid Cards</h6>
+                </div>
+              </div>
+              </div>
+            </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                  <label class=""> Sponser Status ?</label>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group label-floating">
+                  <input type="checkbox" id="chkSponsor" value="Sponsored" onclick="sponsorFunction()">Sponsored
+                </div>
+              </div>
+
+               <div class="col-sm-12 border border-info" id="sponsor" style="display:none;">
+                <div class="form-group label-floating">
+                <label class="control-label">Please Select Sponser Name</label>
+                   <select name="country" class="form-control" onchange="myFunction()" id="mySelect">
+                    <option disabled="" selected=""></option>
+                    <option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1" selected> Asif Amir(SP004)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <p id="demo"></p>
+              </div>
+              <div class="col-sm-12" id="demo2" style="display: none;" >
+                <p> gsdrgsr</p>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group label-floating">
+                <label class="control-label">Sponser Status</label>
+                <form action="" method="" name="myform">
+                  <input type="text" name="t1" onchange="docCal(this.form, this.name)">
+
+                  <input type="checkbox" name="chbox" onclick="docCal(this.form, this.name)">
+
+                  <input type="text" name="result" onchange="docCal(this.form, this.name)">
+
+                  <input type="reset" name="Refresh">
+
+                </form>
                 </div>
               </div>
             </div>
@@ -843,8 +948,64 @@
 </div>
 </div>
 </div>
+
 <!--vertical wizard-->
 </div>
+
+<script type="text/javascript">
+  function docCal(form, pfield) {
+  if (pfield=="result") {
+    if (form.chbox.checked) {
+      form.t1.value=math.sqrt(form.result.value);
+    }
+  } else {
+    if (form.chbox.checked) {
+      form.result.value=form.t1.value*form.t1.value;
+    } else {
+      form.result.value=form.t1.value*2;
+    }
+  }
+}
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+
+  if (x==1) {
+    var e=document.getElementById("demo2");
+    if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+  }
+  if (x==0) {
+    var e=document.getElementById("demo2");
+    if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+  }
+}
+
+function fileFunc(){
+  var chk= document.getElementById("chkFile");
+  var text= document.getElementById("file")
+  if (chk.checked==true) {
+   text.style.display="block";
+  }else{
+    text.style.display="none";
+  }
+}
+function sponsorFunction(){
+  var chk= document.getElementById("chkSponsor");
+  var text= document.getElementById("sponsor")
+  if (chk.checked==true) {
+   text.style.display="block";
+  }else{
+    text.style.display="none";
+  }
+}
+
+
+</script>
 @endsection
 <!-- content-wrapper ends -->
 <!-- partial:../../partials/_footer.html -->
