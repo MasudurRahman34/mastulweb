@@ -67,16 +67,6 @@
                     <input type="text" class="form-control">
                   </div>
                 </div>
-                <div class="col-sm-12">
-                  <div class="form-group label-floating">
-                    <label class="control-label">Sponser Status</label>
-                    <select name="country" class="form-control">
-                      <option disabled="" selected=""></option>
-                      <option value="0" > Sponsered</option>
-                      <option value="1" selected> Not Sponsered</option>
-                    </select>
-                  </div>
-              </div>
               <div class="col-sm-6">
                   <div class="form-group">
                   <label class=""> Additional File(e.g(birth Cirtificate, parents id card)) ?</label>
@@ -161,28 +151,8 @@
                   </select>
                 </div>
               </div>
-              <div class="col-sm-12">
-                <p id="demo"></p>
-              </div>
-              <div class="col-sm-12" id="demo2" style="display: none;" >
-                <p> gsdrgsr</p>
-              </div>
-              <div class="col-sm-12">
-                <div class="form-group label-floating">
-                <label class="control-label">Sponser Status</label>
-                <form action="" method="" name="myform">
-                  <input type="text" name="t1" onchange="docCal(this.form, this.name)">
-
-                  <input type="checkbox" name="chbox" onclick="docCal(this.form, this.name)">
-
-                  <input type="text" name="result" onchange="docCal(this.form, this.name)">
-
-                  <input type="reset" name="Refresh">
-
-                </form>
-                </div>
-              </div>
             </div>
+          </div>
             <!-- About Child -->
             <div class="tab-pane" id="aboutChild">
               <div class="row">
@@ -652,32 +622,32 @@
           
           <div class="col-sm-3">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #004d00">Where Was Before ?</label>
+              <label class="control-label" style="">Where Was Before ?</label>
               <input type="text" class="form-control" >
             </div>
           </div>
           <div class="col-sm-5">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #004d00">Reason Behind Changing Residence ?</label>
+              <label class="control-label" style="">Reason Behind Changing Residence ?</label>
               <input type="text" class="form-control" >
             </div>
           </div>
           <div class="col-sm-5">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #004d00">Plan of Changing Present Residence ?</label>
+              <label class="control-label" style="">Plan of Changing Present Residence ?</label>
               <input type="text" class="form-control" disabled >
             </div>
           </div>
           <div class="col-sm-3 ">
             <div class="form-group label-floating">
-              <input type="checkbox" name="No" ><span style="color: #004d00">No</span>
-              <input type="checkbox" name="Not Sure" ><span style="color: #004d00">Not Sure</span>
-              <input type="checkbox" name="Yes" ><span style="color: #004d00">Yes</span>
+              <input type="checkbox" name="No" ><span style="">No</span>
+              <input type="checkbox" name="Not Sure" ><span style="">Not Sure</span>
+              <input type="checkbox" name="Yes" ><span style="">Yes</span>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #004d00">If Yes, Why and Where The Place?</label>
+              <label class="control-label" style="">If Yes, Why and Where The Place?</label>
               <input type="text" class="form-control" >
             </div>
           </div>
@@ -685,7 +655,7 @@
 
           <div class="col-sm-4 ">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #9900cc">Type of House</label>
+              <label class="control-label" style="">Type of House</label>
               <select name="country" class="form-control">
                 <option disabled="" selected=""></option>
                 <option value="Building">Bulding</option>
@@ -698,7 +668,7 @@
           </div>
           <div class="col-sm-4 ">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #9900cc">Period Of Study At This School </label>
+              <label class="control-label" style="">Period Of Study At This School </label>
               <select name="country" class="form-control">
                 <option disabled="" selected=""></option>
                 <option value="Below-One-Year">Below-One-Years</option>
@@ -713,13 +683,13 @@
           </div>
           <div class="col-sm-4">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #9900cc">Previous School Name ?</label>
+              <label class="control-label" style="">Previous School Name ?</label>
               <input type="text" class="form-control" >
             </div>
           </div>
           <div class="col-sm-12">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #663300">Reasons Behind Changing School ? </label>
+              <label class="control-label" style="">Reasons Behind Changing School ? </label>
               <input type="text" class="form-control" >
             </div>
           </div>
@@ -744,14 +714,14 @@
           </div>
           <div class="col-sm-12 ">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #663300">Parents Problem During Study Of Children</label>
+              <label class="control-label" style="">Parents Problem During Study Of Children</label>
               <input type="text" class="form-control">
             </div>
           </div>
           
           <div class="col-sm-12 ">
             <div class="form-group label-floating">
-              <label class="control-label" style="color: #00cc00">Parents Dream And Plan For Her Child ?</label>
+              <label class="control-label" style="">Parents Dream And Plan For Her Child ?</label>
               <input type="text" class="form-control">
             </div>
           </div>
@@ -763,7 +733,7 @@
       <div class="tab-pane" id="contact">
         <div class="row">
           <div class="col-sm-12">
-            <h4 class="info-text"  style="color: blue">House Owner Information</h4>
+            <h4 class="info-text"  style="">House Owner Information</h4>
           </div>
           <div class="col-sm-4">
             <div class="form-group label-floating">
@@ -785,7 +755,7 @@
           </div>
           
           <div class="col-sm-12">
-            <h4 class="info-text"  style="color: blue">Sibling's Information</h4>
+            <h4 class="info-text"  style="">Sibling's Information</h4>
           </div>
 
           <div class="col-sm-4 ">
@@ -807,7 +777,7 @@
             </div>
           </div>
           <div class="col-sm-12">
-            <h4 class="info-text" style="color: blue"> Relative's Information</h4>
+            <h4 class="info-text" style=""> Relative's Information</h4>
           </div>
           <div class="col-sm-4 ">
             <div class="form-group label-floating">
@@ -829,7 +799,7 @@
             </div>
           </div>
           <div class="col-sm-12">
-            <h4 class="info-text" style="color: blue">Neighbour's Information</h4>
+            <h4 class="info-text" style="">Neighbour's Information</h4>
           </div>
           <div class="col-sm-4 ">
             <div class="form-group label-floating">
@@ -859,7 +829,7 @@
       <div class="tab-pane" id="verify">
         <div class="row">
           <div class="col-sm-12">
-            <h4 class="info-text" style="color: blue"> Teacher Or Parent's Comment</h4>
+            <h4 class="info-text" style=""> Teacher Or Parent's Comment</h4>
           </div>
           <div class="col-sm-4">
             <div class="form-group">
