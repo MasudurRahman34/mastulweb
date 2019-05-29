@@ -2,19 +2,18 @@
 
   @section('content')
   <form  action="{{ route('webmastul.guirdianInsert') }}" method="post">
-    {{ csrf_field() }}
   <div class="row">
     <div class="col">
       <h1> Father Info</h1>
     </div>
     <div class="col">
-      <input type="text" name="fname" class="form-control" placeholder="Father name">
+      <input type="fname" class="form-control" placeholder="Father name">
     </div>
     <div class="col">
-      <input type="text" name="faddress" class="form-control" placeholder="father address">
+      <input type="faddress" class="form-control" placeholder="father address">
     </div>
     <div class="col">
-      <input type="text" name="fmobile" class="form-control" placeholder="mobile Number">
+      <input type="fmobile" class="form-control" placeholder="mobile Number">
     </div>
   </div>
 <div class="row">
@@ -22,13 +21,13 @@
       <h1> Mother Info</h1>
     </div>
     <div class="col">
-      <input type="text" name="mname" class="form-control" placeholder="Mother name">
+      <input type="mname" class="form-control" placeholder="Mother name">
     </div>
     <div class="col">
-      <input type="text" name="maddress" class="form-control" placeholder="Mother address">
+      <input type="maddress" class="form-control" placeholder="Mother address">
     </div>
     <div class="col">
-      <input type="text" name="mmobile" class="form-control" placeholder="mobile Number">
+      <input type="mmobile" class="form-control" placeholder="mobile Number">
     </div>
   </div>
    <button type="submit" class="btn btn-primary">Submit</button>
