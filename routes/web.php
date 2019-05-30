@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 Route::get('/webmastul/admin', 'backend\adminpage@index')->name('webmastul/admin');
 Route::get('/webmastul/childForm', 'backend\adminpage@childForm')->name('webmastul/childForm');
+Route::post('/webmastul/childStore', 'backend\ChildrenController@store')->name('adminchild.store');
+
 Route::get('/webmastul/guirdianIndex', 'backend\adminpage@guirdianIndex')->name('webmastul.guirdianIndex');
 Route::post('/webmastul/guirdianInsert', 'backend\adminpage@guirdianInsert')->name('webmastul.guirdianInsert');
 Route::get('/webmastul/childProfile', 'backend\adminpage@childProfile')->name('webmastul/childProfile');

@@ -68,23 +68,17 @@ class adminpage extends Controller
      */
     public function guirdianInsert(Request $request)
     {
-        $guardianType = array('father' =>'father' , 'mother' =>'mother' );
-        $guirdian= new guirdian;
-        if ($guardianType['father']=='father') {
-            $guirdian->guardian_name= $request->fname;
-            $guirdian->guardian_type= 'father';
-            $guirdian->guardian_address= $request->faddress;
-            $guirdian->guardian_mobile= $request->fmobile;
-            $guirdian->save();
-        }
-          if ($guardianType['mother']=='mother' && $request->mname!=''){
-            $guirdian->guardian_name= $request->mname;
-            $guirdian->guardian_type= 'mother';
-            $guirdian->guardian_address= $request->maddress;
-            $guirdian->guardian_mobile= $request->mmobile;
-            $guirdian->save();
-        }
-         
+         $guirdians = $request->input('guirdian');
+         dd($guirdians);
+         foreach ($guirdians as $guirdian1)
+    {
+        $Charges[] = new guirdian(array(
+            'guardian_mobile'=>$guirdian1['mobile']
+
+        ));
+    }
+    guirdian::create($Charges);
+          
      //Session()->flash('success', 'A new catagory has added succesfully');
      return redirect()->route('webmastul.guirdianIndex');
     } 

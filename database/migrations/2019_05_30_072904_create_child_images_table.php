@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGuirdiansTable extends Migration
+class CreateChildImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateGuirdiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('guirdians', function (Blueprint $table) {
+        Schema::create('child_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('guardian_name');
-            $table->string('guardian_type');
-            $table->string('guardian_address');
-            $table->string('guardian_mobile');
+            $table->integer('child_id')->unsigned();
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateGuirdiansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guirdians');
+        Schema::dropIfExists('child_images');
     }
 }
