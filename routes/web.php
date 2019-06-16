@@ -30,7 +30,7 @@ Route::get('/webmastul/siblingIndex', 'backend\ChildrenController@siblingIndex')
 Route::get('/webmastul/childprofile/siblingAddIndex/{id}', 'backend\ChildrenController@childProfileSiblingAddIndex')->name('childprofile.siblingAddIndex');
 Route::post('/webmastul/childProfileSiblingAdd/{id}', 'backend\ChildrenController@childProfileSiblingAdd')->name('childProfileSiblingAdd');
 
-Route::post('/webmastul/siblingEdit/{id}', 'backend\ChildrenController@siblingEdit')->name('admin.siblingEdit');
+Route::post('/webmastul/siblingInsert/{id}', 'backend\ChildrenController@siblingInsert')->name('admin.siblingInsert');
 
 Route::get('/webmastul/childProfile/{slug}', 'backend\ChildrenController@childProfile')->name('admin.childProfile');
 Route::get('/webmastul/childList', 'backend\ChildrenController@childList')->name('admin.childList');

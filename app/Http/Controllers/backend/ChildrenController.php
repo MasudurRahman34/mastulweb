@@ -223,7 +223,7 @@ public function guirdianInsert(Request $request, $id)
    $grdn->child_id= $id;
    $grdn->save();
      //Session()->flash('success', 'A new catagory has added succesfully');
-   return redirect()->route('webmastul.guirdianIndex');
+   return redirect()->route('admin.guirdianIndex');
 }
 
 

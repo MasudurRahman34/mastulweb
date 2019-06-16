@@ -11,7 +11,7 @@
         <!--      Wizard container        -->
         <div class="wizard-container">
           <div class="card wizard-card" data-color="green" id="wizardProfile">
-           <form action="{{ route('admin.siblingInsert', $child->id) }}" method="post" enctype="multipart/form-data">
+           <form action="{{ route('admin.siblingInsert',$child->id) }}" method="post" enctype="multipart/form-data">
                   {{ csrf_field() }}
               <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
               <div class="wizard-header">
