@@ -26,28 +26,16 @@ class adminpage extends Controller
      */
 
 
-    public function childForm()
-    {
-      return view('backend.pages.childForm');
-      
-    }
+   
 
-    public function childProfile()
-    {
-      return view('backend.pages.childProfile');
-      
-    }
+   
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */  
-    public function childList()
-    {
-      return view('backend.pages.childList');
-      
-    }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -81,7 +69,8 @@ class adminpage extends Controller
           
      //Session()->flash('success', 'A new catagory has added succesfully');
      return redirect()->route('webmastul.guirdianIndex');
-    } 
+    }
+     
      public function guirdianIndex()
     {
          return view('backend.pages.guirdianForm');

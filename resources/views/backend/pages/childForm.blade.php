@@ -116,40 +116,18 @@
                 <div class="form-group label-floating">
                 <label class="control-label">Please Select Sponser Name</label>
                    <select name="sponson_id" class="form-control" onchange="myFunction()" id="mySelect">
-                    <option disabled="" selected=""></option>
-                    <option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
-                    <option value="1" selected> Asif Amir(SP004)</option>
+                    <option disable selected></option>
+                    <option value="1"> kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option>
+                    <option value="1"> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option><option value="0" > kazi Reaz(SP003)</option>
+                    <option value="1"> Asif Amir(SP004)</option>
                   </select>
                 </div>
               </div>
@@ -187,7 +165,7 @@
                 <div class="col-sm-4 ">
                   <div class="form-group label-floating">
                     <label class="control-label">Age</label>
-                    <input type="text" name="age" class="form-control">
+                    <input type="number" name="age" class="form-control">
                   </div>
                 </div>
                 <div class="col-sm-4 ">
@@ -243,6 +221,18 @@
                   <div class="form-group label-floating">
                     <input type="date" name="date_of_birth" class="form-control">Date Of Birth
                     <label class="control-label"></label>
+                  </div>
+                </div>
+                 <div class="col-sm-4 ">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Father income</label>
+                    <input type="text" name="fat_income" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-4 ">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Mother income</label>
+                    <input type="text" name="mot_income" class="form-control">
                   </div>
                 </div>
                 

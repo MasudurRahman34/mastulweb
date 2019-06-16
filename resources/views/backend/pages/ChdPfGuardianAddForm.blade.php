@@ -11,15 +11,16 @@
         <!--      Wizard container        -->
         <div class="wizard-container">
           <div class="card wizard-card" data-color="green" id="wizardProfile">
-           <form action="{{ route('admin.guirdianInsert', $child->id) }}" method="post" enctype="multipart/form-data">
+           <form action="{{ route('childProfile.GuardianAdd', $child->id) }}" method="post" enctype="multipart/form-data">
                   {{ csrf_field() }}
               <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
               <div class="wizard-header">
                 <h3 class="wizard-title">
                  
                   <a class='btn btn-info' href="{{ route('admin.childForm') }}"> Add Child</a>
-              <a class='btn btn-warning' href="{{ route('admin.siblingIndex') }}"> Add Siblings</a>
-                <a class='btn btn-success' href="{{ route('admin.childList') }}"> Child List</a>
+                  <a class='btn btn-warning' href="{{ route('childprofile.siblingAddIndex', $child->id) }}"> Add Siblings</a>
+                  <a class='btn btn-success' href="{{ route('admin.childList') }}"> Child List</a>
+                
               
                </h3>
                <h5>This information will let us know more about guardian.</h5>

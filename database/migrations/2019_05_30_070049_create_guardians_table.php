@@ -15,6 +15,11 @@ class CreateGuardiansTable extends Migration
     {
         Schema::create('guardians', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('child_id')->unsigned();
+            $table->string('guardian_type');
+            $table->string('name')->nullable();
+            $table->string('mobile_num')->nullable();
+            $table->string('gaddress')->nullable();
             $table->timestamps();
         });
     }

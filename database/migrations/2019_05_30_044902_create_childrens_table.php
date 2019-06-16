@@ -16,8 +16,9 @@ class CreateChildrensTable extends Migration
         Schema::create('childrens', function (Blueprint $table) {
             $table->increments('id');
             $table->string('childManual_id');
-            $table->integer('sponson_id')->unsigned();
+            $table->integer('sponson_id')->unsigned()->default(0)->comment("0=not_sponson");
             $table->string('child_name');
+            $table->string('slug');
             $table->string('gender');
             $table->date('date_of_birth')->nullable();
             $table->string('age');
@@ -25,6 +26,8 @@ class CreateChildrensTable extends Migration
             $table->string('school');
             $table->string('religious')->nullable();
             $table->string('height')->nullable();
+            $table->string('fat_income')->nullable();
+            $table->string('mot_income')->nullable();
             $table->string('blood_group')->nullable();
             $table->string('dream')->nullable();
             $table->string('fav_color')->nullable();
@@ -73,6 +76,7 @@ class CreateChildrensTable extends Migration
             $table->string('father_file')->nullable();
             $table->string('mother_file')->nullable();
             $table->string('birth_certificate')->nullable();
+            $table->integer('active_status')->default(0)->comment("0=inactive, 1=active, 2=disable");
             $table->timestamps();
         });
     }
