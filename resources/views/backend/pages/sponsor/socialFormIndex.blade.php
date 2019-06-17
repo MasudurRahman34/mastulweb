@@ -11,22 +11,22 @@
         <!--      Wizard container        -->
         <div class="wizard-container">
           <div class="card wizard-card" data-color="green" id="wizardProfile">
-           <form action="{{ route('admin.guirdianInsert', $child->id) }}" method="post" enctype="multipart/form-data">
+           <form action="{{ route('admin.sacialFormInsert', $sponsor->id) }}" method="post" enctype="multipart/form-data">
                   {{ csrf_field() }}
               <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
               <div class="wizard-header">
                 <h3 class="wizard-title">
                  
-                  <a class='btn btn-info' href="{{ route('admin.childForm') }}"> Add Child</a>
+                  <!-- <a class='btn btn-info' href="{{ route('admin.childForm') }}"> Add Child</a>
                   <a class='btn btn-warning' href="{{ route('admin.siblingIndex') }}"> Add Siblings</a>
-                  <a class='btn btn-success' href="{{ route('admin.childList') }}"> Child List</a>
+                  <a class='btn btn-success' href="{{ route('admin.childList') }}"> Child List</a> -->
               
                </h3>
                <h5>This information will let us know more about guardian.</h5>
              </div>
              <div class="wizard-navigation">
               <ul>
-                <li><a href="#aboutGuardian" data-toggle="tab">Guardian Info</a></li>
+                <li><a href="#aboutGuardian" data-toggle="tab">Social Communication Info</a></li>
             </div>      
             <div class="tab-content">
 
@@ -38,44 +38,31 @@
                   </div>
                    <div class="col-sm-12">
                     
-                      <label>Child ID:: {{$child->childManual_id}} </label>
+                      <label>Sponsor ID:: {{$sponsor->sponsorManual_id}} </label>
                       
                   </div>
                   <div class="col-sm-4 ">
                     <div class="form-group label-floating">
-                      <label class="control-label">Guardian Type</label>
-                      <select name="guardian_type" class="form-control">
+                      <label class="control-label">Communication Type</label>
+                      <select name="type" class="form-control">
                         <option disabled="" selected=""></option>
-                        <option value="Father"> Father </option>
-                        <option value="Mother"> Mother </option>
-                        <option value="Relative"> Relative</option>
-                        <option value="Owner"> Owner </option>
-                        <option value="Neighbour">Neighbour </option>
+                        <option value="mobile">Mobile Number</option>
+                        <option value="personal_email">Personal Email </option>
+                        <option value="official_email"> Official Email</option>
+                        <option value="facebook"> Facebook Id </option>
+                        <option value="skyp">Skyp </option>
+                        <option value="viber">Viber </option>
+                        <option value="whatsapp">Whatsapp </option>
                       </select>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group label-floating">
-                      <label class="control-label"> Name <small>(required)</small></label>
-                      <input type="text" name="name" class="form-control" >
+                      <label class="control-label"> Address <small>(required)</small></label>
+                      <input type="text" name="address" class="form-control" >
                     </div>
                   </div>
                   
-                  
-                  <div class="col-sm-4 ">
-                    <div class="form-group label-floating">
-                      <label class="control-label">Mobile Number</label>
-                      <input type="text" name="mobile_num" class="form-control">
-                    </div>
-                  </div>
-                  
-                <div class="col-sm-12 ">
-                  <div class="form-group label-floating">
-                    <label class="control-label">Present Address</label>
-                    <input type="text" name="gaddress" class="form-control">
-                  </div>
-                </div>
-                
                
         <div class="wizard-footer">
           <div class="pull-right">

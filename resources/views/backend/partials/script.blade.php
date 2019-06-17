@@ -1,4 +1,5 @@
   <script src="{{asset('admin/node_modules/jquery/dist/jquery.min.js')}}"></script>
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
   <script src="{{asset('admin/node_modules/popper.js/dist/umd/popper.min.js')}} "></script>
   <script src="{{asset('admin/node_modules/bootstrap/dist/js/bootstrap.min.js')}} "></script>
   <script src="{{asset('admin/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js')}} "></script>
@@ -64,6 +65,7 @@
  
   <!-- Custom js for Child-List page-->
   <script src="{{asset('admin/js/data-table.js')}}"></script>
+
   
    <!-- End custom js for Child-List page-->
 

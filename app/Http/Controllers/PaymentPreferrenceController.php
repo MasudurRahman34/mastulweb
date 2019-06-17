@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\guirdian;
+use App\model\paymentPreferrence;
 use Illuminate\Http\Request;
 
-class GuirdianController extends Controller
+class PaymentPreferrenceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class GuirdianController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\guirdian  $guirdian
+     * @param  \App\model\paymentPreferrence  $paymentPreferrence
      * @return \Illuminate\Http\Response
      */
-    public function show(guirdian $guirdian)
+    public function show(paymentPreferrence $paymentPreferrence)
     {
         //
     }
@@ -52,10 +52,10 @@ class GuirdianController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\guirdian  $guirdian
+     * @param  \App\model\paymentPreferrence  $paymentPreferrence
      * @return \Illuminate\Http\Response
      */
-    public function edit(guirdian $guirdian)
+    public function edit(paymentPreferrence $paymentPreferrence)
     {
         //
     }
@@ -64,10 +64,10 @@ class GuirdianController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\guirdian  $guirdian
+     * @param  \App\model\paymentPreferrence  $paymentPreferrence
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, guirdian $guirdian)
+    public function update(Request $request, paymentPreferrence $paymentPreferrence)
     {
         //
     }
@@ -75,10 +75,10 @@ class GuirdianController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\guirdian  $guirdian
+     * @param  \App\model\paymentPreferrence  $paymentPreferrence
      * @return \Illuminate\Http\Response
      */
-    public function destroy(guirdian $guirdian)
+    public function destroy(paymentPreferrence $paymentPreferrence)
     {
         //
     }

@@ -20,4 +20,8 @@ public function guardians(){
 	return $this->hasMany('App\model\guardian', 'child_id', 'id');
 	}
 
+public function sponsor(){
+	return $this->belongsTo('App\model\sponsor','sponsor_id', 'id');
+	}
+
 }

@@ -440,5 +440,6 @@
       bar.text.style.fontSize = '1.5rem';
       bar.animate(0.4); // Number from 0.0 to 1.0
     }
+    
   });
 })(jQuery);
