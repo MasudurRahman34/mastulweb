@@ -21,7 +21,7 @@ public function guardians(){
 	}
 
 public function sponsor(){
-	return $this->belongsTo('App\model\sponsor','sponsor_id', 'id');
+	return $this->belongsTo('App\model\sponsor','sponson_id');
 	}
 
 }

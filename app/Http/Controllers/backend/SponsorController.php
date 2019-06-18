@@ -34,7 +34,17 @@ class SponsorController extends Controller
     return view('backend.pages.sponsor.sponsorList')->with('sponsors',$sponsors);
 
 }
+public function sponsorProfile($slug)
+{
+    $spn= sponsor::where('slug', $slug)->first();
+    return view('backend.pages.sponsor.sponsorProfile', compact('spn'));
+       /*if(!is_null($product)) {
+            return view('pages.product.show', compact('product'));
 
+        }*/
+
+
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -124,7 +134,11 @@ public function paymentPrefference(Request $request, $id)
    $pyprnc->amount= $request->amount;
    $pyprnc->transaction_id= $request->transaction_id;
    $pyprnc->sponsor_id= $id;
-   $pyprnc->save();
+   
+   $spn=sponsor::find($id);
+            $spn->active_status= 1;
+            $spn->Save();
+            $pyprnc->save();
 
      //Session()->flash('success', 'A new catagory has added succesfully');
    return redirect()->route('admin.sponsorChildForm', $id);

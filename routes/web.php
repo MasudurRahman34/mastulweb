@@ -56,7 +56,7 @@ Route::get('/webmastul/childForm', 'backend\ChildrenController@childForm')->name
 Route::get('/sponsorForm', 'backend\SponsorController@sponsorForm')->name('admin.sponsor.form');
 	Route::post('/sponsorStore', 'backend\SponsorController@store')->name('admin.sponsor.store');
 	Route::get('/sponsorList', 'backend\SponsorController@sponsorList')->name('admin.sponsor.list');
-	Route::get('/sponsorProfile/{slug}', 'backend\SponsorController@childProfile')->name('admin.sponsorProfile');
+	Route::get('/sponsorProfile/{slug}', 'backend\SponsorController@sponsorProfile')->name('admin.sponsorProfile');
 		//mainEnd
 	/*social auto Add after sponsor add*/
 	Route::get('/sacialFormIndex', 'backend\SponsorController@sacialFormIndex')->name('admin.socialFormIndex');

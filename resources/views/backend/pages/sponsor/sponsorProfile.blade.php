@@ -53,10 +53,10 @@
                        
                           
 
-                          @foreach ($child->childImages as $Imageg)
+                          @foreach ($spn->sponsorImages as $Imageg)
                            <div class="item">
 
-                          <img src="{{asset('images/childImage/'.$Imageg->image)}}" alt="image" />
+                          <img src="{{asset('images/sponsorImage/'.$Imageg->image)}}" alt="image" />
                           </div>
                         @endforeach
 
@@ -69,27 +69,25 @@
                   <div class="card">
                     <div class="card-body overview">
                       <ul class="achivements">
-                        <li><p>34</p><p>Sponsered Material</p></li>
-                        <li><p>23</p><p>Paid Amount</p></li>
-                        <li><p>29</p><p>Not Sponsered</p></li>
+                        @foreach(App\model\paymentPreferrence::select('sponsor_id', DB::raw('SUM(amount) as total_amount'))->where('sponsor_id',$spn->id)->groupBy('sponsor_id')->get() as $payment)
+                        <li><p>0</p><p>Sponsered Material</p></li>
+                        <li><p>{{$payment->total_amount}}</p><p>Paid Amount</p></li>
+                        
+                        
+                        @endforeach
                       </ul>
                       <div class="wrapper about-user ">
                         <h4 class="card-title mt-4 mb-3" style="color:; background-color: #b9e0e4; padding: 10px; border-radius: 2px;  border: 2px solid #f7a2d9;">Sponser Details</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam consectetur ex quod.</p>
                       </div>
                       <div class="info-links">
-                        <a class="website" href="http://urbanui.com/">
+
+                        @foreach (App\model\children::where('sponson_id', $spn->id)->get() as $child)
+                        <a class="website" href="{{ route('admin.childProfile', $child->slug) }}">
                           <i class="mdi mdi-earth text-gray"></i>
-                          <span>http://urbanui.com/</span>
+                          <span>{{$child->child_name}}</span>
                         </a>
-                        <a class="social-link" href="#">
-                          <i class="mdi mdi-facebook text-gray"></i>
-                          <span>https://www.facebook.com/johndoe</span>
-                        </a>
-                        <a class="social-link" href="#">
-                          <i class="mdi mdi-linkedin text-gray"></i>
-                          <span>https://www.linkedin.com/johndoe</span>
-                        </a>
+                        @endforeach
                       </div>
                     </div>
                   </div>
@@ -100,27 +98,21 @@
               <div class="card">
                 <div class="card-body">
                   <div class="wrapper d-block d-sm-flex align-items-center justify-content-between">
-                    <h4 class="card-title mb-0">Child Profile Information</h4>
+                    <h4 class="card-title mb-0">Sponsor Profile Information</h4>
                     <ul class="nav nav-tabs tab-solid tab-solid-primary mb-0" id="myTab" role="tablist">
 
-                      <li class="nav-item">
-                        <a class="nav-link" id="stipend-tab" data-toggle="tab" href="#stipend" role="tab" aria-controls="stipend">Stipends</a>
-                      </li>
+                      
                       <li class="nav-item">
                         <a class="nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-expanded="true">Info</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact">Contact</a>
+                        <a class="nav-link" id="stipend-tab" data-toggle="tab" href="#stipend" role="tab" aria-controls="stipend">Stipends</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="survey-tab" data-toggle="tab" href="#survey" role="tab" aria-controls="security">Survey</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment">Comment</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="security-tab" data-toggle="tab" href="#security" role="tab" aria-controls="security">Security</a>
-                      </li>
+
+                      
+                      
+                      
+                      
                     </ul>
                   </div>
                   <div class="wrapper">
@@ -129,7 +121,32 @@
                      <!-- Start Info-tab -->
                      <div class="tab-pane fade" id="stipend" role="tabpanel" aria-labelledby="stipend-tab">
                       <div class="row">
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal-4" data-whatever="@fat">Add Stidents</button>
+                        <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal-4" data-whatever="@fat">Add Stidents</button> -->
+                         <div class="col-12 table-responsive "  style="overflow-x:auto;">
+          <table id="order-listing" class="table table-hover" cellspacing="10" style="display: block !important; table-layout: fixed; width: 100%">
+            <thead>
+              <tr>
+                <th>SL#</th>
+                <th>Type</th>
+                <th>Address</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+             @foreach ($spn->socialCommunication as $social)
+             <tr>
+              <td>1</td>
+              <td>{{$social->type}}</td>
+              <td>{{$social->address}}</td>
+              <td>
+                <a style="color: white" class="btn btn-info" href=" {{$spn->slug}}">Edit</a>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+
 
 
                         <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -240,85 +257,61 @@
                   <div class="row">
                     <div class="col-md-12">
                       <address>
-                        <p> <span class="font-weight-bold text-info">Child ID :</span> {{$child->childManual_id}}</p>
+                        <p> <span class="font-weight-bold text-info">Sponsor ID :</span> {{$spn->sponsorManual_id}}</p>
                       </address>
                     </div>  
                     <div class="col-md-3">
                       <p class="font-weight-bold">Name</p>
                     </div>
                     <div class="col-md-4">
-                      <p class="">{{$child->child_name}}</p>
+                      <p class="">{{$spn->name}}</p>
                     </div>
                     <div class="col-md-2">
-                      <p class="font-weight-bold">{{$child->gender}}</p>
+                      <p class="font-weight-bold">{{$spn->gender}}</p>
                     </div>
                     <div class="col-md-1">
                       <p class="font-weight-bold">Age</p>
                     </div>
                     <div class="col-md-2">
-                      <p class="">{{$child->age}}</p>
+                      <p class="">{{$spn->age}}</p>
                     </div>
 
                     <div class="col-md-3">
                       <p class="font-weight-bold"></p>
                     </div>
                     <div class="col-md-4">
-                      <p class="">{{$child->date_of_birth}}</p>
+                      <p class="">{{$spn->date_of_birth}}</p>
                     </div>
                     <div class="col-md-2">
-                      <p class="font-weight-bold">Religious</p>
-                    </div>
-                    <div class="col-md-2">
-                      <p class="">{{$child->religious}}</p>
-                    </div>      
+                           <p class="font-weight-bold">Type</p>
+                         </div>
+                      <div class="col-md-2">
+                           <p class="">{{$spn->type}}</p>
+                      </div>   
                     <div class="col-md-3">
-                      <p class="font-weight-bold ">Father's Name</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="">{{$child->religious}}</p>
+                      <p class="font-weight-bold ">Nationality</p>
                     </div>
                     <div class="col-md-3">
-                      <p class="font-weight-bold text-center">Mother's Name</p>
+                      <p class="">{{$spn->nationality}}</p>
                     </div>
                     <div class="col-md-3">
-                      <p class="">{{"Hiramoti Bibi"}}</p>
+                      <p class="font-weight-bold text-center">Conutry Residence</p>
+                    </div>
+                    <div class="col-md-3">
+                      <p class="">{{$spn->country_of_residence}}</p>
                     </div>
 
-                    <div class="col-md-3">
-                      <p class="font-weight-bold"></p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold">{{"Driver"}}</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold"></p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold">{{"Housewife"}}</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold">Contact No</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="">{{"01750687951"}}</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold"></p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="">{{"01750687951"}}</p>
-                    </div>
                     <div class="col-md-3">
                       <p class="font-weight-bold">Local Address </p>
                     </div>
                     <div class="col-md-9">
-                      <p class="">{{$child->present_address}}</p>
+                      <p class="">{{$spn->present_address}}</p>
                     </div>
                     <div class="col-md-3">
                       <p class="font-weight-bold">Permanent Address </p>
                     </div>
                     <div class="col-md-9">
-                      <p class="">{{$child->permanent_address}}</p>
+                      <p class="">{{$spn->permanent_address}}</p>
                     </div>
 
                   </div>
@@ -326,64 +319,29 @@
                   <div class="row">
                     <div class="col-md-12">
                       <address>
-                        <h4 class="font-weight-bold text-light bg-info" style="padding: 5px">Dreams And Likes </h4>
+                        <h4 class="font-weight-bold text-light bg-info" style="padding: 5px">Organization Information </h4>
                       </address>
                     </div>
-                    <div class="col-md-2">
-                      <p class="font-weight-bold ">Color</p>
+                    <div class="col-md-6">
+                      <p class="font-weight-bold ">Organization Name</p>
                     </div>
-                    <div class="col-md-4">
-                      <p class="">{{$child->fav_color}}</p>
+                    <div class="col-md-6">
+                      <p class="">{{$spn->organization_name}}</p>
                     </div>
-                    <div class="col-md-2">
-                      <p class="font-weight-bold">Food</p>
+                    <div class="col-md-6">
+                      <p class="">Organization Address</p>
                     </div>
-                    <div class="col-md-4">
-                      <p class="">{{$child->fav_food}}</p>
+                    <div class="col-md-6">
+                      <p class="">{{$spn->organization_address}}</p>
                     </div>
 
-                    <div class="col-md-2">
-                      <p class="font-weight-bold ">Sports</p>
+                    <div class="col-md-6">
+                      <p class="font-weight-bold ">Designation</p>
                     </div>
-                    <div class="col-md-4">
-                      <p class="">{{$child->fav_sports}}</p>
+                    <div class="col-md-6">
+                      <p class="">{{$spn->designation}}</p>
                     </div>
-                    <div class="col-md-2">
-                      <p class="font-weight-bold">Hobby</p>
-                    </div>
-                    <div class="col-md-4">
-                      <p class="">{{$child->hobby}}</p>
-                    </div>
-                    <div class="col-md-2">
-                      <p class="font-weight-bold ">Skill</p>
-                    </div>
-                    <div class="col-md-10">
-                      <p class="">{{$child->skills}}</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold ">Favorite Personality</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="">{{$child->fav_personality}}</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold ">Favorite Teacher</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="">{{$child->fav_teacher}}</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold ">Favorite place</p>
-                    </div>
-                    <div class="col-md-9">
-                      <p class="font-weight-light">{{$child->fav_place}}</p>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="font-weight-bold ">Child Says</p>
-                    </div>
-                    <div class="col-md-9">
-                     <footer class="blockquote-footer" style="font-size: 130%">"{{$child->permanent_address}} <cite title="Source Title">{{$child->permanent_address}}</cite>"</footer>
-                   </div>
+  
 
                  </div>
 
@@ -393,391 +351,11 @@
                   <button class="btn btn-outline-danger">Cancel</button>
                 </div>
               </form>
-            </div><!-- tab info ends -->
-
-            <!-- // start contact info -->
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="security-tab">
-              <form action="#">
-                <div class="row">
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold text-info">House Owner Information</span></p>
-                    </address>
-                  </div>
-                  @foreach ($child->guardians as $grdn)
-                  <div class="col-md-2">
-                    <p class=""><b>Type-</b>{{$grdn->guardian_type}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p class=""><b>Name-</b>{{$grdn->name}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p class=""><b>Contact no-</b>{{$grdn->mobile_num}}</p>
-                  </div>
-                  <div class="col-md-4">
-                    <p class=""><b>Address-</b>{{$grdn->gaddress}}</p>
-                  </div>
-                  @endforeach
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold text-info">Siblings Information</span></p>
-                    </address>  
-                  </div>
-                  @foreach ($child->siblings as $sbln)
-                  <div class="col-md-4">
-                    <p class=""><b>Name-</b>{{$sbln->sibling_name}}</p>
-                  </div>
-                  <div class="col-md-4">
-                    <p class=""><b>Class-</b>{{$sbln->sibling_class}}</p>
-                  </div>
-                  <div class="col-md-4">
-                    <p class=""><b>Age-</b>{{$sbln->sibling_age}}</p>
-                  </div>
-                  @endforeach
-                </div>
-                
-                
-                <div class="form-group mt-3">
-                  <a class='btn btn-success mr-2' href="{{ route('childprofile.siblingAddIndex', $child->id) }}"> Add Siblings</a>
-
-                  <a class='btn btn-success mr-2' href="{{ route('childProfile.GuardianAddIndex', $child->id) }}"> Add Guardian</a>
-                  <button type="submit" class="btn btn-success mr-2">Update</button>
-                  <button class="btn btn-outline-danger">Cancel</button>
-                </div>
-              </form>
-            </div>
-            <!-- end contact tab -->
-
-            <!-- //survey-tab -->
-            <div class="tab-pane fade" id="survey" role="tabpanel" aria-labelledby="survey-tab">
-              <form action="#">
-                <div class="row">
-                  <div class="col-md-12">
-                    <address>
-                      <p><span class="font-weight-bold text-info">Informar Name--</span>{{$child->informar_name}} <span class="font-weight-bold text-info m-2">Age--</span>{{$child->informar_age}} </p>
-                    </address>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold text-info">Education Level Of Father</span></p>
-                        </address>
-                      </div>
-
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold">{{$child->father_education}} </span></p>
-                        </address>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold text-info">Education Level Of Mother</span></p>
-                        </address>
-                      </div>
-
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold">{{$child->mother_education}} </span></p>
-                        </address>
-                      </div>
-                    </div>
-                  </div>                           
-                </div>
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold text-info">Reason Behind Stopping Education</span></p>
-                        </address>
-                      </div>
-
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold">{{$child->stoppingEdu_reason}} </span></p>
-                        </address>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold text-info">Type Of House</span></p>
-                        </address>
-                      </div>
-
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold">{{$child->house_type}} </span></p>
-                        </address>
-                      </div>
-                    </div>
-                  </div>                           
-                </div>
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold text-info">Period Of Remaining At Present Residence <span class="text-danger">?</span></span></span></p>
-                        </address>
-                      </div>
-
-                      <div class="col-md-12">
-                        <address>
-                          <p> <span class="font-weight-bold">{{$child->stay_time}} </span></p>
-                        </address>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <address>
-                         <p> <span class="font-weight-bold text-info"> Reason Behind Changing Residence<span class="text-danger">?</span></span></span></p>
-                       </address>
-                     </div>
-                     <div class="col-md-12">
-                      <address>
-                        <p> <span class="font-weight-bold">{{$child->changing_residence}} </span></p>
-                      </address>
-                    </div>
-                  </div>
-                </div>                          
-              </div>
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <address>
-                        <p> <span class="font-weight-bold text-info">Where Was Before<span class="text-danger">?</span></span></span></p>
-                      </address>
-                    </div>
-
-                    <div class="col-md-12">
-                      <address>
-                        <p> <span class="font-weight-bold">{{$child->where_before}}  </span></p>
-                      </address>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-5">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <address>
-                        <p> <span class="font-weight-bold text-info">Previous School Name<span class="text-danger">?</span></span></span></p>
-                      </address>
-                    </div>
-
-                    <div class="col-md-12">
-                      <address>
-                        <p> <span class="font-weight-bold">{{$child->pre_school}} </span></p>
-                      </address>
-                    </div>
-                  </div>
-                </div>                           
-              </div>
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <address>
-                        <p> <span class="font-weight-bold text-info">Period Of Study At This School <span class="text-danger">?</span></span></span></p>
-                      </address>
-                    </div>
-
-                    <div class="col-md-12">
-                      <address>
-                        <p> <span class="font-weight-bold">{{$child->study_time}} </span></p>
-                      </address>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-5">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <address>
-                       <p> <span class="font-weight-bold text-info"> Reason Behind Changing School<span class="text-danger">?</span></span></span></p>
-                     </address>
-                   </div>
-
-                   <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold">{{$child->reason_chgSchool}} </span></p>
-                    </address>
-                  </div>
-                </div>
-              </div>                          
-            </div>
-            <div class="row">
-              <div class="col-md-7">
-                <div class="row">
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold text-info">Satisfactory Level Of This Education</span></p>
-                    </address>
-                  </div>
-
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold">{{$child->reason_chgSchool}}</span></p>
-                    </address>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="row">
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold text-info">Noticable Reason</span></p>
-                    </address>
-                  </div>
-
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold">{{$child->reason_chgSchool}}</span></p>
-                    </address>
-                  </div>
-                </div>
-              </div>                           
-            </div>
-            <div class="row">
-              <div class="col-md-7">
-                <div class="row">
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold text-info">Parents Problems During Study Of Children</span></p>
-                    </address>
-                  </div>
-
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold">{{$child->parents_problem}}</span></p>
-                    </address>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="row">
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold text-info">Prents Dream And Plan For Her Children</span></p>
-                    </address>
-                  </div>
-
-                  <div class="col-md-12">
-                    <address>
-                      <p> <span class="font-weight-bold">{{$child->parents_dream}}</span></p>
-                    </address>
-                  </div>
-                </div>
-              </div>                           
-            </div>
-            <div class="form-group mt-3">
-              <button type="submit" class="btn btn-success mr-2">Update</button>
-              <button class="btn btn-outline-danger">Cancel</button>
-            </div>
-          </form>
-        </div>
-        <!-- end Survey tab -->
-
-        <!-- //comment-tab -->
-        <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="comment-tab">   
-          <div class="row">
-            <div class="col-md-4">
-              <div class="row">
-                <div class="col-md-12">
-                  <address>
-                    <p> <span class="font-weight-bold text-info">Brilliancy</span></p>
-                  </address>
-                </div>
-
-                <div class="col-md-12">
-                  <address>
-                    <p> <span class="font-weight-bold">{{$child->brilliancy}}</span></p>
-                  </address>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="row">
-                <div class="col-md-12">
-                  <address>
-                    <p> <span class="font-weight-bold text-info">Behaviour</span></p>
-                  </address>
-                </div>
-                <div class="col-md-12">
-                  <address>
-                    <p> <span class="font-weight-bold">{{$child->behaviour}}</span></p>
-                  </address>
-                </div>
-              </div>
-            </div>  
-            <div class="col-md-4">
-              <div class="row">
-                <div class="col-md-12">
-                  <address>
-                    <p> <span class="font-weight-bold text-info">Attendance</span></p>
-                  </address>
-                </div>
-                <div class="col-md-12">
-                  <address>
-                    <p> <span class="font-weight-bold">{{$child->attendency}}</span></p>
-                  </address>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-12">
-                  <address>
-                    <p> <span class="font-weight-bold text-info">Comments</span></p>
-                  </address>
-                </div>
-
-                <div class="col-md-12">
-                  <address>
-                    <p> <span class="font-weight-bold">{{$child->comment}}</span></p>
-                  </address>
-                </div>
-              </div>
             </div>
 
-          </div>
-
-          <div class="form-group mt-3">
-            <button type="submit" class="btn btn-success mr-2">Update</button>
-            <button class="btn btn-outline-danger">Cancel</button>
-          </div>
-        </form>
-      </div>
       <!-- end Comment tab -->
 
-      <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-        <form action="#">
-          <div class="form-group">
-            <label for="change-password">Change password</label>
-            <input type="password" class="form-control" id="change-password" placeholder="Enter you current password">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" id="new-password" placeholder="Enter you new password">
-          </div>
-          <div class="form-group mt-5">
-            <button type="submit" class="btn btn-success mr-2">Update</button>
-            <button class="btn btn-outline-danger">Cancel</button>
-          </div>
-        </form>
-      </div>
+     
     </div>
   </div>
 </div>

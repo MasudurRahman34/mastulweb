@@ -130,7 +130,7 @@
               <td>
                 
                 <!-- button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">View</button> -->
-                <a style="color: white" class="btn btn-info">View</a>
+                <a style="color: white" class="btn btn-info" href="{{ route('admin.sponsorProfile', $spn->slug) }}">View</a>
               </td>
             </tr>
             @endforeach

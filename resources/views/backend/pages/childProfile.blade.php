@@ -69,26 +69,23 @@
                   <div class="card">
                     <div class="card-body overview">
                       <ul class="achivements">
-                        <li><p>34</p><p>Sponsered Material</p></li>
-                        <li><p>23</p><p>Paid Amount</p></li>
-                        <li><p>29</p><p>Not Sponsered</p></li>
+                         
+                        @foreach(App\model\paymentPreferrence::select('sponsor_id', DB::raw('SUM(amount) as total_amount'))->where('sponsor_id',$child->sponsor->id)->groupBy('sponsor_id')->get() as $payment)
+                        <li><p>0</p><p>Sponsered Material</p></li>
+                        <li><p>{{$payment->total_amount}}</p><p>Paid Amount</p></li>
+                        
+                        
+                        @endforeach
                       </ul>
                       <div class="wrapper about-user ">
                         <h4 class="card-title mt-4 mb-3" style="color:; background-color: #b9e0e4; padding: 10px; border-radius: 2px;  border: 2px solid #f7a2d9;">Sponser Details</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam consectetur ex quod.</p>
                       </div>
                       <div class="info-links">
-                        <a class="website" href="http://urbanui.com/">
+
+                        <a class="website" href="{{ route('admin.sponsorProfile', $child->sponsor->slug) }}">
                           <i class="mdi mdi-earth text-gray"></i>
-                          <span>http://urbanui.com/</span>
-                        </a>
-                        <a class="social-link" href="#">
-                          <i class="mdi mdi-facebook text-gray"></i>
-                          <span>https://www.facebook.com/johndoe</span>
-                        </a>
-                        <a class="social-link" href="#">
-                          <i class="mdi mdi-linkedin text-gray"></i>
-                          <span>https://www.linkedin.com/johndoe</span>
+                          <span>{{$child->sponsor->name}}</span>
                         </a>
                       </div>
                     </div>

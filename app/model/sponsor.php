@@ -15,4 +15,8 @@ public function socialCommunication(){
 public function children(){
 	return $this->hasMany('App\model\children', 'sponson_id');
 	}
+
+public function paymentPreferrence(){
+	return $this->hasMany('App\model\paymentPreferrence', 'sponsor_id');
+	}
 }
