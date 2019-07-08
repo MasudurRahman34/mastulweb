@@ -3,9 +3,11 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\model\children;
+use App\model\sponsor;
 use App\model\childImages;
 use App\model\guardian;
 use App\model\siblings;
+use App\model\videos;
 use Image;
 
 
@@ -27,10 +29,17 @@ class ChildrenController extends Controller
       
   }
 
-  public function childList()
+public function childList()
   {
     $childrens=children::orderBy('id', 'desc')->get();
     return view('backend.pages.childList')->with('childrens',$childrens);
+
+}
+
+public function donatorChildList()
+  {
+    $childrens=children::orderBy('id', 'desc')->get();
+    return view('backend.pages.DonatorChildList')->with('childrens',$childrens);
 
 }
 public function childProfile($slug)
@@ -64,15 +73,15 @@ public function childProfile($slug)
     public function store(Request $request)
     {
        $child=new children;
-       if ($request->sponson_id==null) {
-           $child->sponson_id=0;
+       if ($request->sponsor_id==null) {
+           $child->sponsor_id=0;
        }else {
-        $child->sponson_id= $request->sponson_id; 
+        $child->sponsor_id= $request->sponson_id; 
     }
 
     $child->childManual_id= $request->childManual_id;
     $child->child_name= $request->child_name;
-    $child->slug= str_slug($child->child_name);
+    $child->slug= str_slug($child->child_name.$child->childManual_id);
     $child->gender= $request->gender;
     $child->age= $request->age;
     $child->class= $request->class;
@@ -92,6 +101,8 @@ public function childProfile($slug)
     $child->fav_teacher= $request->fav_teacher;
     $child->hobby= $request->hobby;
     $child->skills= $request->skills;
+    $child->stories= $request->stories;
+    $child->stories= $request->stories;
     $child->informar_name= $request->informar_name;
     $child->informar_age= $request->informar_age;
     $child->father_education= $request->father_education;
@@ -132,12 +143,25 @@ public function childProfile($slug)
             $childImage= new childImages;
             $childImage->child_id= $child->id;
             $childImage->image=$img;
+            $childImage->type='child';
+            $childImage->status=0;
             $childImage->Save();
         }
 
     }
+    if(($request->videolinks !=null) && (count($request->videolinks)>0)){
+        foreach($request->videolinks as $link){
+            $vdo= new videos;
+            $vdo->foreign_id= $child->id;
+            $vdo->type= 'child';
+            $vdo->link=$link;
+            $vdo->status=0;
+            $vdo->Save();
+        }
+
+    }
     /*return redirect()->route('admin.childForm');*/
-    return redirect()->route('webmastul.guirdianIndex');
+    return redirect()->route('admin.guirdianIndex');
     
 }
 
@@ -158,11 +182,51 @@ public function show(children $children)
      * @param  \App\model\children  $children
      * @return \Illuminate\Http\Response
      */
-public function editActiveStatus(Request $request, $id)
+public function previewStatus($id)
+    {
+        $childs= children::where('id', $id)->first();
+    return view('backend.pages.preview', compact('childs'));
+
+   }
+
+public function previewActive(Request $request, $id)
     {
        $child=children::find($id);
 
+       $child->active_status= 1;
+       if ($request->stories==null) {
+           $child->stories='empty';
+       }else {
+        $child->stories= $request->stories;
+       }
+       $child->Save();
+       return redirect()->route('admin.childList');
+
+   }
+
+
+public function imageStaus(Request $request, $id)
+    {
+       $image=childImages::find($id);
+       $image->status= $request->status;
+       $image->Save();
+        return redirect()->route('admin.child.preview',$image->child_id);
+
+   }
+
+  public function videoStaus(Request $request, $id)
+    {
+       $video=videos::find($id);
+       $video->status= $request->status;
+       $video->Save();
+        return redirect()->route('admin.child.preview',$video->foreign_id);
+
+   }
+public function editActiveStatus(Request $request, $id)
+    {
+       $child=children::find($id);
        $child->active_status= $request->active_status;
+       $Image=childImages;
        $child->Save();
        return redirect()->route('admin.childList');
 

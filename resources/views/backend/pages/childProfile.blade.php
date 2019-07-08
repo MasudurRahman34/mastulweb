@@ -69,8 +69,9 @@
                   <div class="card">
                     <div class="card-body overview">
                       <ul class="achivements">
+                        @if($child->sponsor)
                          
-                        @foreach(App\model\paymentPreferrence::select('sponsor_id', DB::raw('SUM(amount) as total_amount'))->where('sponsor_id',$child->sponsor->id)->groupBy('sponsor_id')->get() as $payment)
+                        @foreach(App\model\monthlyPayment::select('sponsor_id', DB::raw('SUM(amount) as total_amount'))->where('sponsor_id',$child->sponsor->id)->groupBy('sponsor_id')->get() as $payment)
                         <li><p>0</p><p>Sponsered Material</p></li>
                         <li><p>{{$payment->total_amount}}</p><p>Paid Amount</p></li>
                         
@@ -87,12 +88,13 @@
                           <i class="mdi mdi-earth text-gray"></i>
                           <span>{{$child->sponsor->name}}</span>
                         </a>
+                        @endif
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            
             <div class="col-lg-8 side-right stretch-card">
               <div class="card">
                 <div class="card-body">

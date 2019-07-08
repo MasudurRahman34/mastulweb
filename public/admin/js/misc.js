@@ -42,7 +42,7 @@
 
 
     //Change sidebar and content-wrapper height
-    applyStyles();
+    /*applyStyles();
     function applyStyles() {
 
       //setting content wrapper height
@@ -79,7 +79,7 @@
           }
         }
       }
-    }
+    }*/
 
     $('.sidebar [data-toggle="collapse"]').on("click", function(event) {
       if(!(body.hasClass('sidebar-icon-only')||body.hasClass('horizontal-menu'))) {

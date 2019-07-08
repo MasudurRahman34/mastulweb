@@ -14,28 +14,34 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/webmastul/admin', 'backend\adminpage@index')->name('webmastul/admin');
+Route::get('/msadmin', 'backend\adminpage@index')->name('msadmin');
+Route::post('/ms/logout', 'auth\LoginController@adminlogout')->name('admin.lgout');
 
 //children controller routes
-Route::get('/webmastul/childForm', 'backend\ChildrenController@childForm')->name('admin.childForm');
-	Route::post('/webmastul/childStore', 'backend\ChildrenController@store')->name('adminchild.store');
-	Route::get('/webmastul/childList', 'backend\ChildrenController@childList')->name('admin.childList');
-	Route::get('/webmastul/childProfile/{slug}', 'backend\ChildrenController@childProfile')->name('admin.childProfile');
+Route::get('/childForm', 'backend\ChildrenController@childForm')->name('admin.childForm');
+	Route::post('/childStore', 'backend\ChildrenController@store')->name('adminchild.store');
+	Route::get('/childList', 'backend\ChildrenController@childList')->name('admin.childList');
+	Route::get('/DonatorchildList', 'backend\ChildrenController@donatorChildList')->name('admin.donatordchild.list');
+	Route::get('/childProfile/{slug}', 'backend\ChildrenController@childProfile')->name('admin.childProfile');
 		//mainEnd
 		/*child ActiveStatus*/
-	Route::post('/webmastul/editActiveStatus/{id}', 'backend\ChildrenController@editActiveStatus')->name('admin.child.editActiveStatus');
+	Route::post('/editActiveStatus/{id}', 'backend\ChildrenController@editActiveStatus')->name('admin.child.editActiveStatus');
+	Route::get('/previewStatus/{id}', 'backend\ChildrenController@previewStatus')->name('admin.child.preview');
+	Route::post('/previewActive/{id}', 'backend\ChildrenController@previewActive')->name('admin.child.previewActive');
+	Route::post('/admin.child.imageStaus/{id}', 'backend\ChildrenController@imageStaus')->name('admin.child.imageStaus');
+	Route::post('/admin.child.videoStaus/{id}', 'backend\ChildrenController@videoStaus')->name('admin.child.videoStaus');
 		//
 
 		/*guardian auto Add after children add*/
-	Route::get('/webmastul/guirdianIndex', 'backend\ChildrenController@guirdianIndex')->name('admin.guirdianIndex');
+	Route::get('/guirdianIndex', 'backend\ChildrenController@guirdianIndex')->name('admin.guirdianIndex');
 
-	Route::post('/webmastul/guirdianInsert/{id}', 'backend\ChildrenController@guirdianInsert')->name('admin.guirdianInsert');
+	Route::post('/guirdianInsert/{id}', 'backend\ChildrenController@guirdianInsert')->name('admin.guirdianInsert');
 
 		//
 		/*guardian ADD inside children profile*/
-	Route::get('/webmastul/childprofile/childProfileGuardianAddIndex/{id}', 'backend\ChildrenController@childProfileGuardianAddIndex')->name('childProfile.GuardianAddIndex');
+	Route::get('/childprofile/childProfileGuardianAddIndex/{id}', 'backend\ChildrenController@childProfileGuardianAddIndex')->name('childProfile.GuardianAddIndex');
 
-	Route::post('/webmastul/childProfileGuardianAddIndex/{id}', 'backend\ChildrenController@childProfileGuardianAdd')->name('childProfile.GuardianAdd');
+	Route::post('/childProfileGuardianAddIndex/{id}', 'backend\ChildrenController@childProfileGuardianAdd')->name('childProfile.GuardianAdd');
 		//
 
 		/*siblings auto Add after children add*/
@@ -55,7 +61,7 @@ Route::get('/webmastul/childForm', 'backend\ChildrenController@childForm')->name
 //start sponsor controller routes
 Route::get('/sponsorForm', 'backend\SponsorController@sponsorForm')->name('admin.sponsor.form');
 	Route::post('/sponsorStore', 'backend\SponsorController@store')->name('admin.sponsor.store');
-	Route::get('/sponsorList', 'backend\SponsorController@sponsorList')->name('admin.sponsor.list');
+	Route::get('/sponsorList', 'backend\SponsorController@sponsorList')->name('admin.sponsorList');
 	Route::get('/sponsorProfile/{slug}', 'backend\SponsorController@sponsorProfile')->name('admin.sponsorProfile');
 		//mainEnd
 	/*social auto Add after sponsor add*/
@@ -63,12 +69,17 @@ Route::get('/sponsorForm', 'backend\SponsorController@sponsorForm')->name('admin
 	Route::post('sacialFormInsert/{id}', 'backend\SponsorController@sacialFormInsert')->name('admin.sacialFormInsert');
 
 	
-	//
-	Route::post('paymentPrefference/{id}', 'backend\SponsorController@paymentPrefference')->name('admin.sponsor.paymentPrefference');
+	//payment
+	Route::post('sponsor/monthlyPayment/{id}', 'backend\SponsorController@monthlyPayment')->name('admin.sponsor.monthlyPayment');
+	Route::post('payment/{id}', 'backend\SponsorController@payment')->name('admin.sponsor.payment');
 	
 	Route::post('sponsorChild/{id}', 'backend\SponsorController@sponsorChild')->name('admin.sponsorChild');
 
 	Route::get('/sponsorChildForm/{id}', 'backend\SponsorController@sponsorChildForm')->name('admin.sponsorChildForm');
+
+	//report
+	Route::get('/monthlyPay', 'monthlyPaymentController@index')->name('admin.monthlypay');
+	Route::get('/individualPay/{id}', 'monthlyPaymentController@show')->name('admin.individualPay');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

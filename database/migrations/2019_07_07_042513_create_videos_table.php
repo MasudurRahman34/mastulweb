@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChildImagesTable extends Migration
+class CreateVideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateChildImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('child_images', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('child_id')->unsigned();
-            $table->string('image');
-            $table->string('type');
+            $table->integer('foreign_id')->unsigned();
+            $table->string('type')->comment("child,sponsor,childGift");
+            $table->string('link');
             $table->integer('status');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateChildImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('child_images');
+        Schema::dropIfExists('videos');
     }
 }

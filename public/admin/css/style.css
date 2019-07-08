@@ -9713,7 +9713,7 @@ tbody.collapse.show {
   color: #12131a;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #e8e7ea;
   background-clip: padding-box;
   border: 1px solid #f2f2f2;
   border-radius: 0.25rem; }
@@ -14572,7 +14572,7 @@ input:focus {
         padding: 0.6rem 1.4rem;
         white-space: nowrap;
         color: #aeaeae;
-        font-size: 1rem;
+        font-size: .8rem;
         font-family: "Roboto", sans-serif; }
         .sidebar .nav .nav-item .nav-link .menu-title {
           display: inline-block; }
@@ -14597,12 +14597,12 @@ input:focus {
           padding: 2.625rem 1.4rem 0.625rem;
           color: #4fc04d; }
     .sidebar .nav.sub-menu {
-      padding-left: 0; }
+      padding-left: 10px; }
       .sidebar .nav.sub-menu .nav-item {
         border-bottom: none; }
         .sidebar .nav.sub-menu .nav-item .nav-link {
-          color: #aeaeae;
-          font-size: 0.75rem;
+          color: #ffffff;
+          font-size: 1rem;
           padding: 0.75rem 1.4rem; }
         .sidebar .nav.sub-menu .nav-item.active .nav-link {
           border-left: 0;
@@ -16980,7 +16980,9 @@ pre {
   border: 0;
   border-radius: 2px; }
   .card .card-body {
-    padding: 1.5rem 0.9375rem; }
+    padding: 1.5rem 0.9375rem; 
+}
+
     .card .card-body + .card-body {
       padding-top: 0; }
   .card.card-outline-success {
@@ -22087,6 +22089,7 @@ div.tagsinput {
   .tt-query, .auth form .form-group
   .tt-hint {
     background: transparent;
+     margin-top: 5px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -22282,6 +22285,7 @@ div.tagsinput {
     .jsgrid .jsgrid-table .jsgrid-filter-row .landing-page .footer .footer-top select, .landing-page .footer .footer-top .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .landing-page .footer .footer-top input[type=number], .landing-page .footer .footer-top .select2-container--default .select2-selection--single, .select2-container--default .landing-page .footer .footer-top .select2-selection--single, .landing-page .footer .footer-top .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .landing-page .footer .footer-top .select2-search__field, .landing-page .footer .footer-top .typeahead, .landing-page .footer .footer-top
     .tt-query, .landing-page .footer .footer-top
     .tt-hint {
+
       background: #171717;
       border: 2px solid gray;
       border-radius: 1.25rem;

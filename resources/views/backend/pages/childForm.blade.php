@@ -63,12 +63,12 @@
                     <h6>Choose Picture</h6>
                   </div>
                 </div>
-               {{--  <div class="col-sm-12">
+               <div class="col-sm-12">
                   <div class="form-group label-floating">
                     <label class="control-label">Video Link</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="videolinks[]" class="form-control">
                   </div>
-                </div> --}}
+                </div>
               {{-- <div class="col-sm-6">
                   <div class="form-group">
                   <label class=""> Additional File(e.g(birth Cirtificate, parents id card)) ?</label>

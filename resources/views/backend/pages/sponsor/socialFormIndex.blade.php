@@ -17,12 +17,12 @@
               <div class="wizard-header">
                 <h3 class="wizard-title">
                  
-                  <!-- <a class='btn btn-info' href="{{ route('admin.childForm') }}"> Add Child</a>
-                  <a class='btn btn-warning' href="{{ route('admin.siblingIndex') }}"> Add Siblings</a>
-                  <a class='btn btn-success' href="{{ route('admin.childList') }}"> Child List</a> -->
+                  <a class='btn btn-info' href="{{ route('admin.socialFormIndex') }}"> Add Sponsor</a>
+                  <a class='btn btn-warning' href="{{ route('admin.sponsorChildForm',  $sponsor->id) }}"> Sponsor Child</a>
+                  <a class='btn btn-success' href="{{ route('admin.sponsor.list') }}"> Sponsor List</a>
               
                </h3>
-               <h5>This information will let us know more about guardian.</h5>
+               <h5>This information will let us know more about Your Social Communicaiton.</h5>
              </div>
              <div class="wizard-navigation">
               <ul>
@@ -34,7 +34,7 @@
               <div class="tab-pane" id="aboutGuardian">
                 <div class="row">
                   <div class="col-sm-12">
-                    <h4 class="info-text" style="color: blue"> Guardian Details </h4>
+                    <h4 class="info-text" style="color: blue"> Social Communication </h4>
                   </div>
                    <div class="col-sm-12">
                     

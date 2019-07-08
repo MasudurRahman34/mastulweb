@@ -5,8 +5,8 @@ use App\Http\Controllers\Controller;
 use App\model\sponsor;
 use App\model\sponsorImages;
 use App\model\socialCommunication;
-use App\model\paymentPreferrence;
 use App\model\children;
+use App\model\monthlyPayment;
 use Illuminate\Http\Request;
 use Image;
 
@@ -17,23 +17,24 @@ class SponsorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+public function index()
     {
         
     }
 
-    public function sponsorForm()
+public function sponsorForm()
     {
 
       return view('backend.pages.sponsor.sponsorForm');
       
     }
-    public function sponsorList()
+public function sponsorList()
   {
     $sponsors=sponsor::orderBy('id', 'desc')->get();
     return view('backend.pages.sponsor.sponsorList')->with('sponsors',$sponsors);
-
 }
+
+
 public function sponsorProfile($slug)
 {
     $spn= sponsor::where('slug', $slug)->first();
@@ -106,7 +107,7 @@ public function sponsorProfile($slug)
         return redirect()->route('admin.socialFormIndex');
     }
 
-    public function sacialFormIndex()
+public function sacialFormIndex()
 {
     $sponsor=sponsor::orderBy('id', 'desc')->first();
     return view('backend.pages.sponsor.socialFormIndex',  compact('sponsor'));
@@ -123,24 +124,44 @@ public function sacialFormInsert(Request $request, $id)
    return redirect()->route('admin.socialFormIndex');
 }
 
-public function paymentPrefference(Request $request, $id)
+public function payment(Request $request, $id)
 {
-   $pyprnc = new paymentPreferrence;
-   $pyprnc->number_of_child= $request->number_of_child;
-   $pyprnc->payment_intervel= $request->payment_intervel;
-   $pyprnc->payment_month= $request->payment_month;
-   $pyprnc->preffered_date= $request->preffered_date;
-   $pyprnc->payment_method= $request->payment_method;
-   $pyprnc->amount= $request->amount;
-   $pyprnc->transaction_id= $request->transaction_id;
-   $pyprnc->sponsor_id= $id;
-   
-   $spn=sponsor::find($id);
+   $spn =sponsor::find($id);
+            $spn->number_of_child= $request->number_of_child;
+            $spn->payment_intervel= $request->payment_intervel;
+            $spn->preffered_date= $request->preffered_date;
             $spn->active_status= 1;
             $spn->Save();
-            $pyprnc->save();
 
-     //Session()->flash('success', 'A new catagory has added succesfully');
+
+    $mntPay = new monthlyPayment;
+   $mntPay->payment_month= $request->payment_month;
+   $mntPay->payment_method= $request->payment_method;
+   $mntPay->amount= $request->amount;
+   $mntPay->transaction_id= $request->transaction_id;
+   $mntPay->sponsor_id= $id;
+   $mntPay->save();
+
+ //Session()->flash('success', 'A new catagory has added succesfully');
+   return redirect()->route('admin.sponsorChildForm', $id);
+}
+
+public function monthlyPayment(Request $request, $id)
+{
+            $spn =sponsor::find($id);
+            $spn->number_of_child= $request->number_of_child;
+            $spn->Save();
+
+
+    $mntPay = new monthlyPayment;
+   $mntPay->payment_month= $request->payment_month;
+   $mntPay->payment_method= $request->payment_method;
+   $mntPay->amount= $request->amount;
+   $mntPay->transaction_id= $request->transaction_id;
+   $mntPay->sponsor_id= $id;
+   $mntPay->save();
+
+ //Session()->flash('success', 'A new catagory has added succesfully');
    return redirect()->route('admin.sponsorChildForm', $id);
 }
 

@@ -4,7 +4,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 
      <div class="row">
-       <div class="col-md-7 grid-margin stretch-card" style="margin: 0 auto">
+       <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Select Child</h4>
@@ -20,7 +20,7 @@
 
                   </div>
                   <button type="submit" class="btn btn-success mr-2">Submit</button>
-                    <button class="btn btn-light">Submit</button> 
+                    <button class="btn btn-light">Cancel</button> 
                 </div>
               </div>
             </div>

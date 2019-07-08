@@ -34,6 +34,10 @@ class CreateSponsorsTable extends Migration
             $table->string('national_id')->nullable();
             $table->string('passport_id')->nullable();
             $table->integer('active_status')->default(0)->comment("0=didnot sponsor, 1=sponson, 2=disable");
+            /*payment preferences*/
+            $table->integer('number_of_child')->nullable();
+            $table->string('payment_intervel')->nullable();
+            $table->string('preffered_date')->nullable();
             $table->timestamps();
         });
     }

@@ -13,10 +13,10 @@ public function socialCommunication(){
 	return $this->hasMany('App\model\socialCommunication', 'sponsor_id');
 	}
 public function children(){
-	return $this->hasMany('App\model\children', 'sponson_id');
+	return $this->hasMany('App\model\children');
 	}
 
-public function paymentPreferrence(){
-	return $this->hasMany('App\model\paymentPreferrence', 'sponsor_id');
+public function monthlyPayment(){
+	return $this->hasMany('App\model\monthlyPayment', 'sponsor_id');
 	}
 }

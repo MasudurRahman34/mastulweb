@@ -4,7 +4,9 @@
 <div class="row">
   <div class="card">
     <div class="card-body">
-      <div style="margin-bottom:20px;"> <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" href="{{ route('admin.childForm') }}">ADD CHILD</a>
+      <div style="margin-bottom:20px;"> 
+        <a class="btn btn-info"  href="{{ route('admin.childForm') }}">Add child</a>
+        <a class="btn btn-success"  href="{{ route('admin.donatordchild.list') }}">Donar child list</a>
       </div>
 
       <div class="row">
@@ -46,10 +48,10 @@
              <td>
               <!-- <label class="badge badge-warning">Not Sponsor</label> -->
              
-              <a class="{{$child->sponson_id == 0 ? 'badge badge-danger' : 'badge badge-info'}}" data-toggle="modal" data-target="#editModal{{$child->id}}" style="color: white;">
-                  {{$child->sponson_id == 0 ? "Not Sponsor" : "sponsor_id"}}
+              <a class="{{$child->sponson_id == 0 ? 'badge badge-danger' : 'badge badge-info'}}" data-toggle="modal" data-target="#sponsorModal{{$child->id}}" style="color: white;">
+                  {{$child->sponson_id == 0 ? "Not Sponsor" : $child->sponsor->name}}
               </a>
-              <div class="modal fade" id="editModal{{$child->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="sponsorModal{{$child->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <form action="{{ route('admin.child.editActiveStatus', $child->id) }}" method="post">
                                     {{csrf_field()}}
                                     
@@ -63,13 +65,12 @@
                       </div>
                       <div class="modal-body">
                         <div class="form-group">
-                          <label for="exampleSelectPrimary" style="font-size: 1rem;">Active Status</label>
+                          <label for="exampleSelectPrimary" style="font-size: 1rem;">Select Sponsor</label>
                           <select class="form-control border-primary" id="exampleSelectPrimary" name="active_status" style="font-size: 1rem;">
-                            <option value="$child->active_status" selected>{{$child->active_status == 0 ? "inactive" : ($child->active_status == 1 ? "Active" : "disable")}}</option>
-                            
-                            <option value="0">Inactive</option>
-                            <option value="1">Active</option>
-                            <option value="2">Disable</option>
+                            @foreach (App\model\sponsor::orderby('id', 'desc')->get() as $spn)
+                              <option value="${{$spn->id}}">{{$spn->name.$spn->sponsorManual_id}}</option>
+                            @endforeach
+                           
                           </select>
                         </div>
                       </div>
@@ -87,10 +88,10 @@
 
             <td>
               <!-- <a class="mdl-button mdl-js-button mdl-button--accent" -->
-              <a class="{{$child->active_status == 0 ? 'badge badge-info' : ($child->active_status == 1 ? 'badge badge-primary' : 'badge badge-danger')}}" data-toggle="modal" data-target="#editModal{{$child->id}}" style="color: white;">
+              <a class="{{$child->active_status == 0 ? 'badge badge-info' : ($child->active_status == 1 ? 'badge badge-primary' : 'badge badge-danger')}}" data-toggle="modal" data-target="#ActiveModal{{$child->id}}" style="color: white;">
                   {{$child->active_status == 0 ? "inactive" : ($child->active_status == 1 ? "active" : "disable")}}
               </a>
-              <div class="modal fade" id="editModal{{$child->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="ActiveModal{{$child->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <form action="{{ route('admin.child.editActiveStatus', $child->id) }}" method="post">
                                     {{csrf_field()}}
                                     
@@ -109,14 +110,14 @@
                             <option value="$child->active_status" selected>{{$child->active_status == 0 ? "inactive" : ($child->active_status == 1 ? "Active" : "disable")}}</option>
                             
                             <option value="0">Inactive</option>
-                            <option value="1">Active</option>
                             <option value="2">Disable</option>
                           </select>
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Publish</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="float: left;">Close</button>
+                         <a class="btn btn-info" href="{{ route('admin.child.preview', $child->id) }}">Preview</a>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                       </div>
                     </div>
                   </div>

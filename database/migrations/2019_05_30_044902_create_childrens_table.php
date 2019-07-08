@@ -16,7 +16,7 @@ class CreateChildrensTable extends Migration
         Schema::create('childrens', function (Blueprint $table) {
             $table->increments('id');
             $table->string('childManual_id');
-            $table->integer('sponson_id')->unsigned()->default(0)->comment("0=not_sponson");
+            $table->integer('sponsor_id')->unsigned()->default(0)->comment("0=not_sponson");
             $table->string('child_name');
             $table->string('slug');
             $table->string('gender');
@@ -38,16 +38,10 @@ class CreateChildrensTable extends Migration
             $table->string('fav_teacher')->nullable();
             $table->string('hobby')->nullable();
             $table->string('skills')->nullable();
+            $table->text('stories')->nullable();
             $table->string('present_address')->nullable();
             $table->string('permanent_address')->nullable();
-           /* $table->string('father_name')->nullable();
-            $table->string('father_mobile')->nullable();
-            $table->string('father_occupation')->nullable();
-            $table->integer('father_income')->nullable();
-            $table->string('mother_name')->nullable();
-            $table->string('mother_mobile')->nullable();
-            $table->string('mother_occupation')->nullable();
-            $table->integer('mother_income')->nullable();*/
+            /*survey*/
             $table->string('informar_name')->nullable();
             $table->string('informar_age')->nullable();
             $table->string('father_education')->nullable();
@@ -73,6 +67,7 @@ class CreateChildrensTable extends Migration
             $table->string('comment')->nullable();
             $table->string('verify_by')->nullable();
             $table->date('verify_date')->nullable();
+            /*file*/
             $table->string('father_file')->nullable();
             $table->string('mother_file')->nullable();
             $table->string('birth_certificate')->nullable();

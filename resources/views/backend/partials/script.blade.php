@@ -65,6 +65,7 @@
  
   <!-- Custom js for Child-List page-->
   <script src="{{asset('admin/js/data-table.js')}}"></script>
+  
 
   
    <!-- End custom js for Child-List page-->

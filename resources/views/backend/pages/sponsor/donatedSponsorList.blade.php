@@ -8,7 +8,8 @@
     <div class="card-body">
       <div style="margin-bottom:20px;"> 
         <a class="btn btn-info" href="{{ route('admin.sponsor.form') }}">Add Sponsor</a>
-        <a class="btn btn-success"  href="{{ route('admin.donatordchild.list') }}">Donar child list</a>
+        <a class="btn btn-success" href="{{ route('admin.sponsor.list') }}">All Sponsor</a>
+       
       </div>
 
       <div class="row">
@@ -59,17 +60,15 @@
              <td>{{$spn->organization_name}}</td>
             <td>
               <!-- <a class="mdl-button mdl-js-button mdl-button--accent" -->
-              <a class="{{$spn->active_status == 0 ? 'badge badge-info' : ($spn->active_status == 1 ? 'badge badge-primary' : 'badge badge-danger')}}" data-toggle="modal" data-target="{{$spn->active_status == 0 ? "#payment$spn->id" : "#monthlypay$spn->id"}}" style="color: white;">
-                  {{$spn->active_status == 0 ? "Waiting" : ($spn->active_status == 1 ? "Sponsored" : "disable")}}
+              <a class="{{$spn->active_status == 0 ? 'badge badge-info' : ($spn->active_status == 1 ? 'badge badge-primary' : 'badge badge-danger')}}" data-toggle="modal" data-target="#editModal{{$spn->id}}" style="color: white;">
+                  {{$spn->active_status == 0 ? "didn't sponsor" : ($spn->active_status == 1 ? "sponsor" : "disable")}}
               </a>
-
-              <!-- model payment preferences -->
-              <div class="modal fade" id="payment{{$spn->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="editModal{{$spn->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-body">
-                <form class="forms-sample" action="{{ route('admin.sponsor.payment', $spn->id) }}"method="post">
+                <form class="forms-sample" action="{{ route('admin.sponsor.paymentPrefference', $spn->id) }}"method="post">
                   {{csrf_field()}}
                                     
                     <div class="form-group">
@@ -105,61 +104,6 @@
                     <div class="form-group">
                       <input type="number" name="preffered_date" class="form-control" placeholder="Preffered Date">
                     </div>
-                    <div class="form-group">
-                      <select class="form-control border-primary" name="payment_method" id="exampleSelectPrimary">
-                      <option selected>Select Payment Method</option>
-                      <option value="Bkash">Bkash</option>
-                      <option value="Rocket">Rocket</option>
-                      <option value="Bank">Bank</option>
-                    </select>
-                    </div>
-                    <div class="form-group">
-                      <input type="number" name="amount" class="form-control" placeholder="Amount TK">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" name="transaction_id" class="form-control" placeholder="transaction Id">
-                    </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </div>
-                    </div>
-                    </form>
-                  </div>
-
-                <!-- </form> -->
-                </div>
-
-
-                <div class="modal fade" id="monthlypay{{$spn->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-body">
-                <form class="forms-sample" action="{{ route('admin.sponsor.monthlyPayment', $spn->id) }}"method="post">
-                  {{csrf_field()}}
-                                    
-                    <div class="form-group">
-                      <input type="text" name="number_of_child" class="form-control" value="{{$spn->number_of_child}}">
-                    </div>
-                    <div class="form-group">
-                      <select class="form-control border-primary" name="payment_month" id="exampleSelectPrimary">
-                      <option selected>payment_month</option>
-                      <option value="January">January</option>
-                      <option value="February">February</option>
-                      <option value="March">March</option>
-                      <option value="april">april</option>
-                      <option value="May">May</option>
-                      <option value="June">June</option>
-                      <option value="July">July</option>
-                      <option value="August">August</option>
-                      <option value="September">September</option>
-                      <option value="October">October</option>
-                      <option value="November">November</option>
-                      <option value="December">December </option>
-                    </select>
-                    </div> 
                     <div class="form-group">
                       <select class="form-control border-primary" name="payment_method" id="exampleSelectPrimary">
                       <option selected>Select Payment Method</option>
