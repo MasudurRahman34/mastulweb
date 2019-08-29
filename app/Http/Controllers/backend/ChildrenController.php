@@ -200,7 +200,7 @@ public function previewActive(Request $request, $id)
         $child->stories= $request->stories;
        }
        $child->Save();
-       return redirect()->route('admin.childList');
+       return redirect()->route('trnRequest');
 
    }
 

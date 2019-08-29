@@ -13,7 +13,7 @@
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Large select {{$sponsor->id}}</label>
                     <select class="form-control form-control-lg js-example-basic-multiple " id="exampleFormControlSelect1" multiple="multiple" name="child_id[]">
-                      @foreach(App\model\children::where('sponson_id', 0)->get() as $child)
+                      @foreach(App\model\children::where('sponsor_id', 0)->get() as $child)
                       <option value="{{$child->id}}">{{$child->child_name}}</option>
                       @endforeach
                     </select>

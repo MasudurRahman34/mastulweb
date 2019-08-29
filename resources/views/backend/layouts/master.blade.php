@@ -43,6 +43,8 @@
 
   <!-- plugins:js -->
 @include ('backend.partials.script')
+@yield('script')
+
 </body>
 
 

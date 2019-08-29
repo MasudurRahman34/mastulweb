@@ -176,13 +176,13 @@ public function sponsorChild(Request $request, $id)
     if(($request->child_id !=null) && (count($request->child_id)>0)){
         foreach($request->child_id as $child_id){
             $child=children::find($child_id);
-            $child->sponson_id= $id;
+            $child->sponsor_id= $id;
             $child->Save();
         }
 
     }
     /*return redirect()->route('admin.childForm');*/
-    return redirect()->route('admin.sponsor.list');
+    return redirect()->route('admin.sponsorList');
 }
 
     /**

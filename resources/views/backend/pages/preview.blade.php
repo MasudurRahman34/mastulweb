@@ -1,5 +1,11 @@
   @extends('backend.layouts.master')
   @section('content')
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.2/tinymce.min.js' referrerpolicy="origin"></script>
+  <script>
+  tinymce.init({
+    selector: '#mytextarea'
+  });
+  </script>
   <div class="row">
     
     <div class="col-lg-6 grid-margin stretch-card">
@@ -152,7 +158,8 @@
            <form action="{{ route('admin.child.previewActive', $childs->id) }}" method="post">
              {{csrf_field()}}
           <div class="form-group">
-            <textarea class="form-control" name="stories" rows="10">{{$childs->stories}}</textarea>
+
+            <textarea class="form-control" id="mytextarea" name="stories" rows="10">{{$childs->stories}}</textarea>
           </div>
           <button type="submit" class="btn btn-info mr-2">Submit All</button>
            </form>

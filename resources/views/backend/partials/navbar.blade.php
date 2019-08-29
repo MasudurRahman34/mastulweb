@@ -6,7 +6,7 @@
       <button class="navbar-toggler navbar-toggler d-none d-lg-block align-self-center mr-2" type="button" data-toggle="minimize">
         <span class="icon-list icons"></span>
       </button>
-      <p class="page-name d-none d-lg-block">{{Auth::user()->name}}</p>
+      {{-- <p class="page-name d-none d-lg-block">{{Auth::user()->name}}</p> --}}
       <ul class="navbar-nav ml-lg-auto">
         <li class="nav-item">
          

@@ -24,7 +24,7 @@
             </thead>
             <tbody>
              @foreach ($childrens as $child)
-             @if ($child->sponson_id!=0)
+             @if ($child->sponsor_id!=0)
                {{-- true expr --}}
                {{-- false expr --}}
              
