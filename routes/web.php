@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 Route::get('/msadmin', 'backend\adminpage@index')->name('msadmin');
 Route::post('/ms/logout', 'auth\LoginController@adminlogout')->name('admin.lgout');
 
@@ -83,3 +83,33 @@ Route::get('/sponsorForm', 'backend\SponsorController@sponsorForm')->name('admin
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//frontend
+Route::get('/index11', 'frontController@index')->name('index11');
+
+Route::get('/contact', 'frontController@contact_us')->name('contactus');
+
+Route::get('/design', 'frontController@design_principle')->name('design_principle');
+
+Route::get('/members', 'frontController@members')->name('members');
+Route::get('/aboutus', 'frontController@aboutus')->name('aboutus');
+Route::get('/donation_details', 'frontController@donation_details')->name('donation_details');
+
+//sponsor route
+Route::get('/sponsor-a-child', 'frontController@childGrid')->name('childGrid');
+Route::get('/singleChild', 'frontController@singleChild')->name('singleChild');
+//project
+Route::get('/projectGrid', 'frontController@projectGrid')->name('projectGrid');
+Route::get('/singleProject', 'frontController@singleProject')->name('singleProject');
+//cash process
+
+// eventGrid
+Route::get('/eventGrid', 'frontController@eventGrid')->name('eventGrid');
+Route::get('/singleEvent', 'frontController@singleEvent')->name('singleEvent');
+//
+
+Route::get('/checkout', 'frontController@checkout')->name('Checkout');
+
+
+
